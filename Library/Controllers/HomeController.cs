@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Library.Models;
 using System.Security.Cryptography;
 using System.Text;
+using System.Net;
 
 namespace Library.Controllers
 {
@@ -132,6 +133,9 @@ namespace Library.Controllers
             return byte2String;
         }
 
+
        
+
+
     }
 }

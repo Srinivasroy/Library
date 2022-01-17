@@ -9,6 +9,8 @@ namespace Library.Models
 {
     public class Entity : DbContext
     {
+       
+
         public Entity() : base("Login_Register") { }
         public DbSet<Login_Register> Login_Register { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
