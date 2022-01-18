@@ -153,7 +153,7 @@
       <DependentUpon>Books.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\Login_Register.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +188,7 @@
     <Content Include="Views\books1\Details.cshtml" />
     <Content Include="Views\books1\Edit.cshtml" />
     <Content Include="Views\books1\Index.cshtml" />
+    <Content Include="Views\Home\Welcome1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

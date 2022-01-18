@@ -1,10 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Admin Page";
+   // ViewBag.Title = "User Page";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Admin Page</h2>
+<h2>User Page</h2>
 
 <div class="row justify-content-md-start">
     <div class="col-md-4">
@@ -14,10 +14,10 @@
                 @if (Session["FullName"] != null)
                 {
                     @*<p>Name: @Session["FullName"].ToString()</p>
-                <p>Email: @Session["Email"].ToString()</p>*@
-
-                    @Html.ActionLink("Books Menu", "Index", "books1") <br />
-                    @Html.ActionLink("Enter new Book", "Create", "books1") <br />
+                        <p>Email: @Session["Email"].ToString()</p>*@
+                    <p>Welcome User</p>
+                    @*@Html.ActionLink("Books Menu", "Index", "books1") <br />
+                    @Html.ActionLink("Enter new Book", "Create", "books1") <br />*@
 
                     @*@Html.ActionLink("Delete a Book", "Delete", "books1") <br /> <br />*@
 

@@ -9,11 +9,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Models
 {
-    public class Login_Register
+    public class Login
     {
         [Key, Column(Order = 1)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
+        public int Id { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string FirstName { get; set; }
@@ -33,6 +33,7 @@ namespace Library.Models
         [Required]
         [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string ConfirmPassword { get; set; }
+        public int Epic { get; set; }
         public string FullName()
         {
             return this.FirstName + " " + this.LastName;

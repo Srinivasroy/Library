@@ -7,6 +7,7 @@ using Library.Models;
 using System.Security.Cryptography;
 using System.Text;
 using System.Net;
+using Library.Models;
 
 namespace Library.Controllers
 {
@@ -14,7 +15,8 @@ namespace Library.Controllers
     {
         private Entity db = new Entity();
 
-
+       private static int value = 0;
+        private object obj = value;
 
         public ActionResult Index()
         {
@@ -26,7 +28,19 @@ namespace Library.Controllers
 
         public ActionResult Welcome()
         {
-            if (Session["UserId"] != null)
+            if (Session["Id"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+
+        }
+        public ActionResult Welcome1()
+        {
+            if (Session["Id"] != null)
             {
                 return View();
             }
@@ -37,7 +51,7 @@ namespace Library.Controllers
 
         }
 
-   
+
 
         public ActionResult Register()
         {
@@ -47,16 +61,16 @@ namespace Library.Controllers
         //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Login_Register _user)
+        public ActionResult Register(Login _user)
         {
             if (ModelState.IsValid)
             {
-                var check = db.Login_Register.FirstOrDefault(s => s.Email == _user.Email);
+                var check = db.Login.FirstOrDefault(s => s.Email == _user.Email);
                 if (check == null)
                 {
                     _user.Password = GetMD5(_user.Password);
                     db.Configuration.ValidateOnSaveEnabled = false;
-                    db.Login_Register.Add(_user);
+                    db.Login.Add(_user);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -89,13 +103,24 @@ namespace Library.Controllers
 
 
                 var f_password = GetMD5(Password);
-                var data =db.Login_Register.Where(s => s.Email.Equals(Email) && s.Password.Equals(f_password)).ToList();
+                var data =db.Login.Where(s => s.Email.Equals(Email) && s.Password.Equals(f_password)).ToList();
                 if (data.Count() > 0)
                 {
-                    //add session
-                    Session["FullName"] = data.FirstOrDefault().FirstName +" "+ data.FirstOrDefault().LastName;
+
+                    if ((db.Epic == 0) == true)
+                    {
+
+
+                        //add session
+                        Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
+                        Session["Email"] = data.FirstOrDefault().Email;
+                        Session["Id"] = data.FirstOrDefault().Id;
+                        return RedirectToAction("Welcome1");
+                    }
+                    // add session
+                    Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
                     Session["Email"] = data.FirstOrDefault().Email;
-                    Session["UserId"] = data.FirstOrDefault().UserId;
+                    Session["Id"] = data.FirstOrDefault().Id;
                     return RedirectToAction("Welcome");
                 }
                 else
