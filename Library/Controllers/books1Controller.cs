@@ -128,7 +128,7 @@ namespace Library.Controllers
         //public ActionResult category(int? id)
         //{
         //    List<book> B = new List<book>();
-
+        
         //    String K = "Novel";
 
         //    B = (from s in db.books where s.category.Contains(K) select s).ToList();

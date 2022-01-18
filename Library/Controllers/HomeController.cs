@@ -104,10 +104,10 @@ namespace Library.Controllers
 
                 var f_password = GetMD5(Password);
                 var data =db.Login.Where(s => s.Email.Equals(Email) && s.Password.Equals(f_password)).ToList();
-                if (data.Count() > 0)
+                if (data.Count() == 1)
                 {
 
-                    if ((db.Epic == 0) == true)
+                    if (data[0].Epic == 0)
                     {
 
 
