@@ -11,10 +11,11 @@
         <div class="col-md-4">
             @using (Html.BeginForm("Login", "Home", FormMethod.Post))
             {
+                @Html.AntiForgeryToken()
                 <div class="card">
                     <div class="card-body">
 
-                        @Html.AntiForgeryToken()
+
 
                         <div class="form-group">
                             @Html.LabelFor(m => m.Email)
@@ -39,11 +40,11 @@
                             <input type="submit" name="submit" class="btn btn-primary" value="Login" />
                         </div>
 
-                        
+
                     </div>
                 </div>
             }
-            </div>
+        </div>
         </div>
 
 
