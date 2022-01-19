@@ -11,7 +11,7 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
-    
+  
     public partial class book
     {
         public int SNO { get; set; }
