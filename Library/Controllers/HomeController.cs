@@ -140,6 +140,18 @@ namespace Library.Controllers
             return RedirectToAction("Login");
         }
 
+        //Contact
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
+        //About
+        public ActionResult About()
+        {
+            return View();
+        }
+
 
 
         //create a string MD5

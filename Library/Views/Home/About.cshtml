@@ -1,0 +1,36 @@
+﻿@{
+    // ViewBag.Title = "About";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>About Application</h2>
+
+
+<p>It's a Mobile access, anytime, anywhere and it is user_freindly</p>
+<p>You can search add, update, and view library materials </p>
+<p>One can track any information through this system</p>
+<p>Its cost effective and easy to install</p>
+
+
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse" style="float:right;">
+            <ul class="nav navbar-nav">
+                <li>  @Html.ActionLink("Home", "Welcome1", "Home")</li>
+                <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
+
+            </ul>
+        </div>
+    </div>
+</div>

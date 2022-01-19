@@ -231,6 +231,8 @@
     <Content Include="Views\Books_Record\Details.cshtml" />
     <Content Include="Views\Books_Record\Edit.cshtml" />
     <Content Include="Views\Books_Record\Index.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

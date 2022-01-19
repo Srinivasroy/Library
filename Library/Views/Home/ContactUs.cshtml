@@ -1,0 +1,41 @@
+﻿
+
+
+@{
+    // ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Contact Page</h2>
+
+<address>
+    Indium Software Ltd<br />
+    Banglore, Mob: 98052-6399<br />
+    <abbr title="Phone">P: </abbr>
+    571602
+</address>
+
+<address>
+    <strong>Shwetha:</strong>   <a href="mailto:Shwetha@gmail.com">Shwetha@gmail.com</a><br />
+    <strong>Srinivas:</strong> <a href="mailto:Srinivasroy@gmail.com">Srinivas@gmail.com</a>
+</address>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse" style="float:right;">
+            <ul class="nav navbar-nav">
+                <li>  @Html.ActionLink("Home", "Welcome1", "Home")</li>
+                <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
