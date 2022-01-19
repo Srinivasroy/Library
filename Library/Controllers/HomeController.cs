@@ -7,7 +7,7 @@ using Library.Models;
 using System.Security.Cryptography;
 using System.Text;
 using System.Net;
-using Library.Models;
+
 
 namespace Library.Controllers
 {
@@ -15,8 +15,8 @@ namespace Library.Controllers
     {
         private Entity db = new Entity();
 
-       private static int value = 0;
-        private object obj = value;
+       //private static int value = 0;
+       // private object obj = value;
 
         public ActionResult Index()
         {

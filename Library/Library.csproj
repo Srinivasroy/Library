@@ -107,15 +107,25 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Books.Context.tt">
+    <Content Include="Models\Books1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Books.edmx</DependentUpon>
-      <LastGenOutput>Books.Context.cs</LastGenOutput>
+      <DependentUpon>Books1.edmx</DependentUpon>
+      <LastGenOutput>Books1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Books.tt">
+    <Content Include="Models\Books1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Books.edmx</DependentUpon>
-      <LastGenOutput>Books.cs</LastGenOutput>
+      <DependentUpon>Books1.edmx</DependentUpon>
+      <LastGenOutput>Books1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Books_Record.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Books_Record.edmx</DependentUpon>
+      <LastGenOutput>Books_Record.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Books_Record.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Books_Record.edmx</DependentUpon>
+      <LastGenOutput>Books_Record1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -130,27 +140,46 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\books1Controller.cs" />
+    <Compile Include="Controllers\Books_RecordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\book.cs">
-      <DependentUpon>Books.tt</DependentUpon>
+      <DependentUpon>Books1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Books.Context.cs">
+    <Compile Include="Models\Books1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Books.Context.tt</DependentUpon>
+      <DependentUpon>Books1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Books.cs">
+    <Compile Include="Models\Books1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Books.tt</DependentUpon>
+      <DependentUpon>Books1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Books.Designer.cs">
+    <Compile Include="Models\Books1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Books.edmx</DependentUpon>
+      <DependentUpon>Books1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Books_Record.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Books_Record.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Books_Record.cs">
+      <DependentUpon>Books_Record.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Books_Record.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Books_Record.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Books_Record1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Books_Record.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Login.cs" />
@@ -162,12 +191,19 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
-    <EntityDeploy Include="Models\Books.edmx">
+    <EntityDeploy Include="Models\Books1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Books.Designer.cs</LastGenOutput>
+      <LastGenOutput>Books1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Books.edmx.diagram">
-      <DependentUpon>Books.edmx</DependentUpon>
+    <Content Include="Models\Books1.edmx.diagram">
+      <DependentUpon>Books1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Books_Record.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Books_Record.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Books_Record.edmx.diagram">
+      <DependentUpon>Books_Record.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
@@ -189,6 +225,13 @@
     <Content Include="Views\books1\Edit.cshtml" />
     <Content Include="Views\books1\Index.cshtml" />
     <Content Include="Views\Home\Welcome1.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Books_Record\Create.cshtml" />
+    <Content Include="Views\Books_Record\Delete.cshtml" />
+    <Content Include="Views\Books_Record\Details.cshtml" />
+    <Content Include="Views\Books_Record\Edit.cshtml" />
+    <Content Include="Views\Books_Record\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
