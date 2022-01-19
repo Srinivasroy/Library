@@ -111,13 +111,13 @@ namespace Library.Controllers
                     {
 
 
-                        //add session
+                        // User
                         Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
                         Session["Email"] = data.FirstOrDefault().Email;
                         Session["Id"] = data.FirstOrDefault().Id;
                         return RedirectToAction("Welcome1");
                     }
-                    // add session
+                    // Admin
                     Session["FullName"] = data.FirstOrDefault().FirstName + " " + data.FirstOrDefault().LastName;
                     Session["Email"] = data.FirstOrDefault().Email;
                     Session["Id"] = data.FirstOrDefault().Id;
