@@ -1,12 +1,10 @@
-﻿@model IEnumerable<Library.Models.book>
-
-
+﻿@model Library.Models.book
 @{
-    ViewBag.Title = "Books";
+    ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Cart</h2>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -39,43 +37,37 @@
 </div>
 
 
-
-
-
-<table class="table">
-    <tr>
-        <th>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
             @Html.DisplayNameFor(model => model.Book_Name)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_Name)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Author_Name)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author_Name)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.category)
-        </th>
-        <th></th>
-    </tr>
+        </dt>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Book_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.category)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.SNO }) |
-                @Html.ActionLink("Add to cart", "Cart", new { id = item.SNO }) 
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
 
-            </td>
-        </tr>
-    }
+    </dl>
+</div>
+<p>
 
-</table>
-
-
+    @Html.ActionLink("Back to Books", "Index1")
+</p>

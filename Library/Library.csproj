@@ -127,6 +127,16 @@
       <DependentUpon>Books_Record.edmx</DependentUpon>
       <LastGenOutput>Books_Record1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Cart.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cart.edmx</DependentUpon>
+      <LastGenOutput>Cart.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Cart.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cart.edmx</DependentUpon>
+      <LastGenOutput>Cart.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -142,6 +152,7 @@
     <Compile Include="Controllers\books1Controller.cs" />
     <Compile Include="Controllers\Books_RecordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IssuedBooksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,7 +192,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Books_Record.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cart.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cart.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\IssuedBook.cs">
+      <DependentUpon>Cart.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -204,6 +233,13 @@
     </EntityDeploy>
     <Content Include="Models\Books_Record.edmx.diagram">
       <DependentUpon>Books_Record.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Cart.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Cart.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Cart.edmx.diagram">
+      <DependentUpon>Cart.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
@@ -233,6 +269,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\books1\Index1.cshtml" />
     <Content Include="Views\books1\Create.cshtml" />
+    <Content Include="Views\books1\Cart.cshtml" />
+    <Content Include="Views\IssuedBooks\Create.cshtml" />
+    <Content Include="Views\IssuedBooks\Delete.cshtml" />
+    <Content Include="Views\IssuedBooks\Details.cshtml" />
+    <Content Include="Views\IssuedBooks\Edit.cshtml" />
+    <Content Include="Views\IssuedBooks\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

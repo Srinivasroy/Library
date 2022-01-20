@@ -11,22 +11,15 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class book
+    
+    public partial class IssuedBook
     {
-        [NotMapped]
-        public static int SNO { get; set; }
-        [NotMapped]
-        public static string Book_Name { get; set; }
-        [NotMapped]
-        public static string Author_Name { get; set; }
-        [NotMapped]
-        public static string category { get; set; }
-
-      
-
-        
-
+        public int SNO { get; set; }
+        public string Book_Name { get; set; }
+        public string Author_Name { get; set; }
+        public string category { get; set; }
+        public string UserEmail { get; set; }
+        public System.DateTime IssuedON { get; set; }
+        public System.DateTime ReturnON { get; set; }
     }
 }
