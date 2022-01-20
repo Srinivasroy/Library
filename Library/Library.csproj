@@ -232,6 +232,7 @@
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\books1\Index1.cshtml" />
+    <Content Include="Views\books1\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
