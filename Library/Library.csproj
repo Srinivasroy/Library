@@ -219,7 +219,6 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Views\books1\Create.cshtml" />
     <Content Include="Views\books1\Delete.cshtml" />
     <Content Include="Views\books1\Details.cshtml" />
     <Content Include="Views\books1\Edit.cshtml" />
@@ -230,9 +229,10 @@
     <Content Include="Views\Books_Record\Delete.cshtml" />
     <Content Include="Views\Books_Record\Details.cshtml" />
     <Content Include="Views\Books_Record\Edit.cshtml" />
-    <Content Include="Views\Books_Record\Index.cshtml" />
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\books1\Index1.cshtml" />
+    <Content Include="Views\books1\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
