@@ -1,6 +1,6 @@
 ﻿
 @{
-    //ViewBag.Title = "Admin Page";
+    ViewBag.Title = "Admin Page";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
@@ -20,9 +20,8 @@
                 </button>
             @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
-        <div class="navbar-collapse collapse"   style="float:right;">
+        <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-
                 <li> @Html.ActionLink("Books List", "Index", "books1")</li>
                 <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>
                 <li>  @Html.ActionLink("Books_Record", "Index", "Books_Record")</li>
