@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Library.Models;
@@ -15,10 +16,20 @@ namespace Library.Controllers
         private LoginEntities db = new LoginEntities();
 
         // GET: books1
+
+        [HttpGet]
         public ActionResult Index()
         {
+            
             return View(db.books.ToList());
         }
+        public ActionResult Index1()
+        {
+
+            return View(db.books.ToList());
+        }
+
+
 
         // GET: books1/Details/5
         public ActionResult Details(int? id)
@@ -32,6 +43,9 @@ namespace Library.Controllers
             {
                 return HttpNotFound();
             }
+            // object a = book;
+            //book book1;
+            //book1[] = book;
             return View(book);
         }
 
@@ -123,26 +137,9 @@ namespace Library.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-        //public ActionResult category(int? id)
-        //{
-        //    List<book> B = new List<book>();
         
-        //    String K = "Novel";
 
-        //    B = (from s in db.books where s.category.Contains(K) select s).ToList();
 
-        //    if (B == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    book book = db.books.Find(id);
-        //    if (B == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(B);
-        //}
+
     }
 }

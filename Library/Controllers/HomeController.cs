@@ -61,16 +61,16 @@ namespace Library.Controllers
         //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Login _user)
+        public ActionResult Register(Login user)
         {
             if (ModelState.IsValid)
             {
-                var check = db.Login.FirstOrDefault(s => s.Email == _user.Email);
+                var check = db.Login.FirstOrDefault(s => s.Email == user.Email);
                 if (check == null)
                 {
-                    _user.Password = GetMD5(_user.Password);
+                    user.Password = GetMD5(user.Password);
                     db.Configuration.ValidateOnSaveEnabled = false;
-                    db.Login.Add(_user);
+                    db.Login.Add(user);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -151,6 +151,10 @@ namespace Library.Controllers
         {
             return View();
         }
+
+       
+
+
 
 
 
