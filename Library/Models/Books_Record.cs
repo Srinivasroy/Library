@@ -11,10 +11,13 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Books_Record
     {
+       
         public int SNO { get; set; }
+
         public string Book_Name { get; set; }
         public string Book_IssuedTo { get; set; }
         public Nullable<System.DateTime> Book_IssuedOn { get; set; }
