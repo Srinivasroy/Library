@@ -15,14 +15,14 @@ namespace Library.Models
 
     public partial class book
     {
-        [NotMapped]
-        public static int SNO { get; set; }
-        [NotMapped]
-        public static string Book_Name { get; set; }
-        [NotMapped]
-        public static string Author_Name { get; set; }
-        [NotMapped]
-        public static string category { get; set; }
+      
+        public  int SNO { get; set; }
+       
+        public  string Book_Name { get; set; }
+        
+        public  string Author_Name { get; set; }
+        
+        public  string category { get; set; }
 
       
 

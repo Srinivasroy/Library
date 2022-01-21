@@ -139,15 +139,35 @@ namespace Library.Controllers
             }
             base.Dispose(disposing);
         }
-
+        
         public ActionResult Cart(int? id)
         {
-           
-            book book = db.books.Find(id);
+            LoginEntities3 db1 = new LoginEntities3();
 
+            book book = db.books.Find(id);
+            IssuedBook IssueDetails = new IssuedBook();
+            Login L = new Login();
+               IssueDetails.SNO = book.SNO;
+            IssueDetails.Book_Name = book.Book_Name;
+            IssueDetails.Author_Name = book.Author_Name;
+            IssueDetails.category = book.category;
+            IssueDetails.UserEmail = Session["email"].ToString();
+            IssueDetails.IssuedON = DateTime.Now;
+            IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
+            //IssueDetails
+            db1.IssuedBooks.Add(IssueDetails);
+
+            try
+            {
+                db1.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine();
+            }
             return RedirectToAction("Index", "IssuedBooks");
 
-          //  return View(book);
+            // return View(book);
         }
 
 

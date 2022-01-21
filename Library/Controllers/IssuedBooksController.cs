@@ -14,21 +14,15 @@ namespace Library.Controllers
     {
         private LoginEntities3 db = new LoginEntities3();
 
-        
-
-
+      
 
 
         // GET: IssuedBooks
+       
         public ActionResult Index()
         {
-            IssuedBook b = new IssuedBook();
-            b.Book_Name = book.Book_Name;
-            b.Author_Name = book.Author_Name;
-            b.category = book.category;
 
-            db.SaveChanges();
-
+           
 
             return View(db.IssuedBooks.ToList());
 

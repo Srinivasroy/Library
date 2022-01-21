@@ -20,6 +20,7 @@ namespace Library.Controllers
 
         public ActionResult Index()
         {
+          
             return View();
 
         }
@@ -174,8 +175,12 @@ namespace Library.Controllers
             return byte2String;
         }
 
-
        
+
+
+
+
+
 
 
     }
