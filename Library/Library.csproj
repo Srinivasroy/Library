@@ -275,6 +275,7 @@
     <Content Include="Views\IssuedBooks\Details.cshtml" />
     <Content Include="Views\IssuedBooks\Edit.cshtml" />
     <Content Include="Views\IssuedBooks\Index.cshtml" />
+    <Content Include="Views\IssuedBooks\ErrorMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -156,14 +156,15 @@ namespace Library.Controllers
             IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
             //IssueDetails
             db1.IssuedBooks.Add(IssueDetails);
-
+            //int Count = 0;
             try
             {
                 db1.SaveChanges();
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine();
+                Console.WriteLine(ex.Message);
             }
             return RedirectToAction("Index", "IssuedBooks");
 
