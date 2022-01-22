@@ -161,6 +161,15 @@ namespace Library.Controllers
             {
                 db1.SaveChanges();
                 
+                if(IssueDetails.UserEmail.Equals(3))
+                {
+                    RedirectToAction("ErrorMessage", "IssuedBooks");
+                }
+                else
+                {
+
+                }
+                
             }
             catch (Exception ex)
             {

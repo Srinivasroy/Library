@@ -132,5 +132,31 @@ namespace Library.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Return(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            IssuedBook issuedBook = db.IssuedBooks.Find(id);
+            if (issuedBook == null)
+            {
+                return HttpNotFound();
+            }
+            return View(issuedBook);
+        }
+
+        [HttpPost, ActionName("Return")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ReturnConfirmed(int id)
+        {
+            IssuedBook issuedBook = db.IssuedBooks.Find(id);
+            db.IssuedBooks.Remove(issuedBook);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
+    
