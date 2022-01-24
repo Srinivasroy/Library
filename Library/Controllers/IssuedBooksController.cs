@@ -137,7 +137,7 @@ namespace Library.Controllers
             IssuedBook issuedBook = db.IssuedBooks.Find(id);
             db.IssuedBooks.Remove(issuedBook);
             db.SaveChanges();
-            return RedirectToAction("AdminIndex");
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

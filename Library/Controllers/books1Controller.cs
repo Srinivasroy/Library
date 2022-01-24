@@ -156,7 +156,7 @@ namespace Library.Controllers
         public ActionResult Cart(int? id)
         {
             LoginEntities3 db1 = new LoginEntities3();
-            book b = new book();
+           
             book book = db.books.Find(id);
             IssuedBook IssueDetails = new IssuedBook();
             Login L = new Login();
@@ -167,21 +167,18 @@ namespace Library.Controllers
             IssueDetails.UserEmail = Session["email"].ToString();
             IssueDetails.IssuedON = DateTime.Now;
             IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
-            
-           
+
+            book.Quantity = (book.Quantity - 1);
 
            
             db1.IssuedBooks.Add(IssueDetails);
             
             try
                 {
-                if (b.Book_Name == IssueDetails.Book_Name)
-                {
-                    b.Quantity--;
-                }
+               
 
                 db1.SaveChanges();
-
+                db.SaveChanges();
                
                
 
