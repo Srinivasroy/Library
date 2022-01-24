@@ -11,22 +11,13 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class book
     {
-      
-        public  int SNO { get; set; }
-       
-        public  string Book_Name { get; set; }
-        
-        public  string Author_Name { get; set; }
-        
-        public  string category { get; set; }
-
-      
-
-        
-
+        public int SNO { get; set; }
+        public string Book_Name { get; set; }
+        public string Author_Name { get; set; }
+        public string category { get; set; }
+        public Nullable<int> Quantity { get; set; }
     }
 }

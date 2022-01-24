@@ -45,9 +45,22 @@ namespace Library.Controllers
             {
                 return HttpNotFound();
             }
-            // object a = book;
-            //book book1;
-            //book1[] = book;
+            
+            return View(book);
+        }
+
+        public ActionResult UserDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            book book = db.books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+            
             return View(book);
         }
 
@@ -62,7 +75,7 @@ namespace Library.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SNO,Book_Name,Author_Name,category")] book book)
+        public ActionResult Create([Bind(Include = "SNO,Book_Name,Author_Name,category,Quantity")] book book)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +107,7 @@ namespace Library.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SNO,Book_Name,Author_Name,category")] book book)
+        public ActionResult Edit([Bind(Include = "SNO,Book_Name,Author_Name,category,Quantity")] book book)
         {
             if (ModelState.IsValid)
             {
@@ -143,7 +156,7 @@ namespace Library.Controllers
         public ActionResult Cart(int? id)
         {
             LoginEntities3 db1 = new LoginEntities3();
-
+           
             book book = db.books.Find(id);
             IssuedBook IssueDetails = new IssuedBook();
             Login L = new Login();
@@ -154,10 +167,14 @@ namespace Library.Controllers
             IssueDetails.UserEmail = Session["email"].ToString();
             IssueDetails.IssuedON = DateTime.Now;
             IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
-            //IssueDetails
+
+            book.Quantity = (book.Quantity - 1);
+
+           
             db1.IssuedBooks.Add(IssueDetails);
-            //int Count = 0;
+            
             try
+<<<<<<< HEAD
             {
                 db1.SaveChanges();
                 
@@ -170,6 +187,19 @@ namespace Library.Controllers
                 {
                     return RedirectToAction("ErrorMessage", "IssuedBooks");
                 }
+=======
+                {
+               
+
+                db1.SaveChanges();
+                db.SaveChanges();
+               
+               
+
+
+                
+                
+>>>>>>> f744610534e7fd3bd60d52c8e0972985231b4684
                 
 
             }

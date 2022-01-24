@@ -14,23 +14,39 @@ namespace Library.Controllers
     {
         private LoginEntities3 db = new LoginEntities3();
 
-      
+        book b = new book();
 
 
         // GET: IssuedBooks
        
         public ActionResult Index()
         {
+       
 
-           
 
             return View(db.IssuedBooks.ToList());
+       }
 
-           
+        public ActionResult AdminIndex()
+        {
+             return View(db.IssuedBooks.ToList());
         }
 
         // GET: IssuedBooks/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            IssuedBook issuedBook = db.IssuedBooks.Find(id);
+            if (issuedBook == null)
+            {
+                return HttpNotFound();
+            }
+            return View(issuedBook);
+        }
+        public ActionResult AdminDetails(int? id)
         {
             if (id == null)
             {
@@ -133,7 +149,24 @@ namespace Library.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Return(int? id)
+        public ActionResult Return()
+        {
+
+            return View(db.IssuedBooks.ToList());
+        }
+
+        //[HttpPost, ActionName("Return")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult ReturnConfirmed(int id)
+        //{
+        //    IssuedBook issuedBook = db.IssuedBooks.Find(id);
+        //    db.IssuedBooks.Remove(issuedBook);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+
+        public ActionResult Return_Book(int? id)
         {
             if (id == null)
             {
@@ -147,15 +180,17 @@ namespace Library.Controllers
             return View(issuedBook);
         }
 
-        [HttpPost, ActionName("Return")]
+      
+        [HttpPost, ActionName("Return_Book")]
         [ValidateAntiForgeryToken]
-        public ActionResult ReturnConfirmed(int id)
+        public ActionResult Return_Book(int id)
         {
             IssuedBook issuedBook = db.IssuedBooks.Find(id);
             db.IssuedBooks.Remove(issuedBook);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Return");
         }
+
 
     }
 }

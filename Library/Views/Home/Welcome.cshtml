@@ -20,11 +20,11 @@
                 </button>
             @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse"style="float:right;">
             <ul class="nav navbar-nav">
                 <li> @Html.ActionLink("Books List", "Index", "books1")</li>
                 <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>
-                <li>  @Html.ActionLink("Books_Record", "Index", "IssuedBooks")</li>
+                <li>  @Html.ActionLink("Books Record", "AdminIndex", "IssuedBooks")</li>
                 <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
 
             </ul>

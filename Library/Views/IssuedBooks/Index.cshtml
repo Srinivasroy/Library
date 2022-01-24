@@ -2,10 +2,12 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
 <h2>Cart</h2>
 
+<<<<<<< HEAD
 
 
 
@@ -54,6 +56,8 @@
 
 
 
+=======
+>>>>>>> f744610534e7fd3bd60d52c8e0972985231b4684
 <table class="table">
     <tr>
         <th>
@@ -99,7 +103,11 @@
                 @Html.DisplayFor(modelItem => item.ReturnON)
             </td>
             <td>
+<<<<<<< HEAD
                 @Html.ActionLink("Return", "Return", new { id = item.SNO }) |
+=======
+
+>>>>>>> f744610534e7fd3bd60d52c8e0972985231b4684
                 @Html.ActionLink("Details", "Details", new { id = item.SNO }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.SNO })
             </td>
@@ -107,3 +115,4 @@
     }
 
 </table>
+            @Html.ActionLink("Back to books", "Index1","books1")
