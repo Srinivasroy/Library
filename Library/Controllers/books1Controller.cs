@@ -174,7 +174,7 @@ namespace Library.Controllers
             db1.IssuedBooks.Add(IssueDetails);
             
             try
-<<<<<<< HEAD
+
             {
                 db1.SaveChanges();
                 
@@ -187,19 +187,19 @@ namespace Library.Controllers
                 {
                     return RedirectToAction("ErrorMessage", "IssuedBooks");
                 }
-=======
+
                 {
-               
-
-                db1.SaveChanges();
-                db.SaveChanges();
-               
-               
 
 
-                
-                
->>>>>>> f744610534e7fd3bd60d52c8e0972985231b4684
+                    db1.SaveChanges();
+                    db.SaveChanges();
+
+
+
+
+
+
+                }
                 
 
             }
