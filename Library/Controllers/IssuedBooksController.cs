@@ -21,20 +21,32 @@ namespace Library.Controllers
        
         public ActionResult Index()
         {
-            //if (b.Quantity == 0)
-            //{
-            //    ViewBag.error = "Book is out of stock";
-            //    return View();
-            //}
+       
 
 
             return View(db.IssuedBooks.ToList());
-            
+       }
 
+        public ActionResult AdminIndex()
+        {
+             return View(db.IssuedBooks.ToList());
         }
 
         // GET: IssuedBooks/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            IssuedBook issuedBook = db.IssuedBooks.Find(id);
+            if (issuedBook == null)
+            {
+                return HttpNotFound();
+            }
+            return View(issuedBook);
+        }
+        public ActionResult AdminDetails(int? id)
         {
             if (id == null)
             {
@@ -125,7 +137,7 @@ namespace Library.Controllers
             IssuedBook issuedBook = db.IssuedBooks.Find(id);
             db.IssuedBooks.Remove(issuedBook);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("AdminIndex");
         }
 
         protected override void Dispose(bool disposing)

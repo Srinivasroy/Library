@@ -239,6 +239,10 @@
     <Content Include="Views\IssuedBooks\Return.cshtml" />
     <Content Include="Views\Shared\UserLayout.cshtml" />
     <Content Include="Views\IssuedBooks\Return_Book.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\books1\UserDetails.cshtml" />
+    <Content Include="Views\IssuedBooks\AdminIndex.cshtml" />
+    <Content Include="Views\IssuedBooks\AdminDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

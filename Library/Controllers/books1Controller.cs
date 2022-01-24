@@ -45,9 +45,22 @@ namespace Library.Controllers
             {
                 return HttpNotFound();
             }
-            // object a = book;
-            //book book1;
-            //book1[] = book;
+            
+            return View(book);
+        }
+
+        public ActionResult UserDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            book book = db.books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+            
             return View(book);
         }
 
@@ -62,7 +75,7 @@ namespace Library.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SNO,Book_Name,Author_Name,category")] book book)
+        public ActionResult Create([Bind(Include = "SNO,Book_Name,Author_Name,category,Quantity")] book book)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +107,7 @@ namespace Library.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SNO,Book_Name,Author_Name,category")] book book)
+        public ActionResult Edit([Bind(Include = "SNO,Book_Name,Author_Name,category,Quantity")] book book)
         {
             if (ModelState.IsValid)
             {
@@ -155,27 +168,26 @@ namespace Library.Controllers
             IssueDetails.IssuedON = DateTime.Now;
             IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
             
-            if(IssueDetails.Book_Name == b.Book_Name)
-            {
-                b.Quantity--;
-            }
+           
 
-            //IssueDetails
+           
             db1.IssuedBooks.Add(IssueDetails);
-            //int Count = 0;
+            
             try
-            {
-                db1.SaveChanges();
-               
-                
-                if(IssueDetails.UserEmail.Equals(3))
                 {
-                    RedirectToAction("ErrorMessage", "IssuedBooks");
+                if (b.Book_Name == IssueDetails.Book_Name)
+                {
+                    b.Quantity--;
                 }
-                else
-                {
 
-                }
+                db1.SaveChanges();
+
+               
+               
+
+
+                
+                
                 
             }
             catch (Exception ex)
