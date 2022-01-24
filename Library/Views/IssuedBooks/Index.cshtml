@@ -7,10 +7,6 @@
 
 <h2>Cart</h2>
 
-<<<<<<< HEAD
-
-
-
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -51,13 +47,6 @@
 <br />
 
 
-
-
-
-
-
-=======
->>>>>>> f744610534e7fd3bd60d52c8e0972985231b4684
 <table class="table">
     <tr>
         <th>
@@ -103,11 +92,8 @@
                 @Html.DisplayFor(modelItem => item.ReturnON)
             </td>
             <td>
-<<<<<<< HEAD
-                @Html.ActionLink("Return", "Return", new { id = item.SNO }) |
-=======
 
->>>>>>> f744610534e7fd3bd60d52c8e0972985231b4684
+               @* @Html.ActionLink("Return", "Return", new { id = item.SNO }) |*@
                 @Html.ActionLink("Details", "Details", new { id = item.SNO }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.SNO })
             </td>
@@ -115,4 +101,4 @@
     }
 
 </table>
-            @Html.ActionLink("Back to books", "Index1","books1")
+            @Html.ActionLink("Back To List", "Index1","books1")

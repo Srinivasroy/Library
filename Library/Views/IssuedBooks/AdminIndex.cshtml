@@ -4,7 +4,8 @@
     ViewBag.Title = "AdminIndex";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
+    @*<a href=~/Views/IssuedBooks/AdminIndex.cshtml</a>*@
+   @*"~/Views/IssuedBooks/AdminIndex.cshtml">*@
 <h2>Cart</h2>
 
 <table class="table">
@@ -14,6 +15,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Author_Name)
+            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.category)
@@ -59,4 +61,4 @@
     }
 
 </table>
-@Html.ActionLink("Back to books", "Index", "books1")
+@Html.ActionLink("Back To List", "Index", "books1")
