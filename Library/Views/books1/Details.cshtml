@@ -2,40 +2,10 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/Layout.cshtml";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
 <h2>Details</h2>
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        </div>
-        <div class="navbar-collapse collapse" style="float:right;">
-            <ul class="nav navbar-nav">
-
-                @*  <li> @Html.ActionLink("Books Menu", "Index", "books1")</li>
-                    <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>*@
-
-                @*<li> @Html.ActionLink("Books Menu", "Index", "books1")</li>
-                    <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>*@
-                <li>  @Html.ActionLink("View Books", "Index1", "books1")</li>
-                <li>  @Html.ActionLink("About", "About", "Home")</li>
-                <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>
-
-                <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
-
-            </ul>
-        </div>
-    </div>
-</div>
 
 
 <div>
