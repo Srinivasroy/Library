@@ -1,12 +1,11 @@
-﻿@model Library.Models.IssuedBook
+﻿@model IEnumerable<Library.Models.IssuedBook>
 
 @{
-
-    ViewBag.Title = "Return";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Books you have</h2>
 
 
 
@@ -14,69 +13,61 @@
 
 
 
-<h3>Are you sure you want to Return this?</h3>
-<div>
-    <h4>IssuedBook</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.Book_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Book_Name)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Author_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author_Name)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.category)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.UserEmail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserEmail)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IssuedON)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IssuedON)
-        </dd>
-
-        <dt>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ReturnON)
-        </dt>
+        </th>
+        <th></th>
+    </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReturnON)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
+    @foreach (var item in Model)
     {
-        @Html.AntiForgeryToken()
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnON)
+            </td>
+            <td>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Return" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+                @Html.ActionLink("Return", "Return_Book", new { id = item.SNO })
+
+            </td>
+        </tr>
     }
-</div>
 
+</table>

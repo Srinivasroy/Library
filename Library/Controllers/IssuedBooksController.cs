@@ -14,19 +14,23 @@ namespace Library.Controllers
     {
         private LoginEntities3 db = new LoginEntities3();
 
-      
+        book b = new book();
 
 
         // GET: IssuedBooks
        
         public ActionResult Index()
         {
+            //if (b.Quantity == 0)
+            //{
+            //    ViewBag.error = "Book is out of stock";
+            //    return View();
+            //}
 
-           
 
             return View(db.IssuedBooks.ToList());
+            
 
-           
         }
 
         // GET: IssuedBooks/Details/5
@@ -133,7 +137,24 @@ namespace Library.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Return(int? id)
+        public ActionResult Return()
+        {
+
+            return View(db.IssuedBooks.ToList());
+        }
+
+        //[HttpPost, ActionName("Return")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult ReturnConfirmed(int id)
+        //{
+        //    IssuedBook issuedBook = db.IssuedBooks.Find(id);
+        //    db.IssuedBooks.Remove(issuedBook);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+
+        public ActionResult Return_Book(int? id)
         {
             if (id == null)
             {
@@ -147,15 +168,17 @@ namespace Library.Controllers
             return View(issuedBook);
         }
 
-        [HttpPost, ActionName("Return")]
+      
+        [HttpPost, ActionName("Return_Book")]
         [ValidateAntiForgeryToken]
-        public ActionResult ReturnConfirmed(int id)
+        public ActionResult Return_Book(int id)
         {
             IssuedBook issuedBook = db.IssuedBooks.Find(id);
             db.IssuedBooks.Remove(issuedBook);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Return");
         }
+
 
     }
 }

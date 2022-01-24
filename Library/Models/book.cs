@@ -24,9 +24,11 @@ namespace Library.Models
         
         public  string category { get; set; }
 
-      
+        public int Quantity { get; set; }
 
-        
+
+
+
 
     }
 }

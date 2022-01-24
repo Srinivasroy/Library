@@ -117,16 +117,6 @@
       <DependentUpon>Books1.edmx</DependentUpon>
       <LastGenOutput>Books1.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Books_Record.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Books_Record.edmx</DependentUpon>
-      <LastGenOutput>Books_Record.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Books_Record.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Books_Record.edmx</DependentUpon>
-      <LastGenOutput>Books_Record1.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\Cart.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Cart.edmx</DependentUpon>
@@ -150,7 +140,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\books1Controller.cs" />
-    <Compile Include="Controllers\Books_RecordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IssuedBooksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -173,24 +162,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Books1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Books_Record.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Books_Record.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Books_Record.cs">
-      <DependentUpon>Books_Record.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Books_Record.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Books_Record.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Books_Record1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Books_Record.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.Context.cs">
       <AutoGen>True</AutoGen>
@@ -227,13 +198,6 @@
     <Content Include="Models\Books1.edmx.diagram">
       <DependentUpon>Books1.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Books_Record.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Books_Record.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Books_Record.edmx.diagram">
-      <DependentUpon>Books_Record.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\Cart.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Cart.Designer.cs</LastGenOutput>
@@ -261,10 +225,6 @@
     <Content Include="Views\books1\Index.cshtml" />
     <Content Include="Views\Home\Welcome1.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Books_Record\Create.cshtml" />
-    <Content Include="Views\Books_Record\Delete.cshtml" />
-    <Content Include="Views\Books_Record\Details.cshtml" />
-    <Content Include="Views\Books_Record\Edit.cshtml" />
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\books1\Index1.cshtml" />
@@ -278,6 +238,7 @@
     <Content Include="Views\IssuedBooks\ErrorMessage.cshtml" />
     <Content Include="Views\IssuedBooks\Return.cshtml" />
     <Content Include="Views\Shared\UserLayout.cshtml" />
+    <Content Include="Views\IssuedBooks\Return_Book.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
