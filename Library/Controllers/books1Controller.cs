@@ -187,9 +187,26 @@ namespace Library.Controllers
                 {
                     return RedirectToAction("ErrorMessage", "IssuedBooks");
                 }
+<<<<<<< HEAD
 
                 db1.SaveChanges();
                 db.SaveChanges();
+=======
+
+                {
+
+
+                    db1.SaveChanges();
+                    db.SaveChanges();
+
+
+
+
+
+
+                }
+                
+>>>>>>> 4bffcdba9545b6a9521d7ea474037a928fcd2de8
 
             }
             catch (Exception ex)
