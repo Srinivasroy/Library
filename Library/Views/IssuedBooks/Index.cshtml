@@ -24,20 +24,29 @@
             <ul class="nav navbar-nav">
 
                 @*  <li> @Html.ActionLink("Books Menu", "Index", "books1")</li>
-        <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>*@
+                    <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>*@
 
                 @*<li> @Html.ActionLink("Books Menu", "Index", "books1")</li>
-        <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>*@
+                    <li>  @Html.ActionLink("Enter new Book", "Create", "books1")</li>*@
                 @*<li>  @Html.ActionLink("View Books", "Index1", "books1")</li>
-        <li>  @Html.ActionLink("About", "About", "Home")</li>
-        <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>*@
+                    <li>  @Html.ActionLink("About", "About", "Home")</li>
+                    <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>*@
                 <li>  @Html.ActionLink("Home", "Index", "Home")</li>
+                <li>  @Html.ActionLink("Books List", "Index1", "books1")</li>
                 <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
 
             </ul>
         </div>
     </div>
 </div>
+
+<div>
+    @if (ViewBag.error != null)
+    {
+        <span class="badge badge-danger">@ViewBag.error</span>
+    }
+</div>
+<br />
 
 
 
@@ -68,32 +77,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Book_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IssuedON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReturnON)
-        </td>
-        <td>
-            @Html.ActionLink("Return", "Return", new { id=item.SNO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SNO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SNO })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnON)
+            </td>
+            <td>
+                @Html.ActionLink("Return", "Return", new { id = item.SNO }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SNO }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SNO })
+            </td>
+        </tr>
+    }
 
 </table>

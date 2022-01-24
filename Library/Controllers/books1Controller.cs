@@ -163,17 +163,20 @@ namespace Library.Controllers
                 
                 if(IssueDetails.UserEmail.Equals(3))
                 {
-                    RedirectToAction("ErrorMessage", "IssuedBooks");
+                    //return RedirectToAction("ErrorMessage", "IssuedBooks");
+                    ViewBag.error = "You Already Issued 3 books";
                 }
                 else
                 {
-
+                    return RedirectToAction("ErrorMessage", "IssuedBooks");
                 }
                 
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                //Console.WriteLine(ex.Message);
+                ViewBag.error = "Book is out of Stock";
             }
             return RedirectToAction("Index", "IssuedBooks");
 
