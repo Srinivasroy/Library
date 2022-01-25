@@ -173,42 +173,32 @@ namespace Library.Controllers
            
             db1.IssuedBooks.Add(IssueDetails);
 
-            try
+            
 
-            {
-                db1.SaveChanges();
+            
+                //db1.SaveChanges();
 
-                if (IssueDetails.UserEmail.Equals(3))
+                /* if (IssueDetails.UserEmail.Equals(3))
+                 {
+                     //return RedirectToAction("ErrorMessage", "IssuedBooks");
+                     ViewBag.error = "You Already Issued 3 books";
+                 }
+                 else
+                 {
+                     return RedirectToAction("ErrorMessage", "IssuedBooks");
+                 }*/
+
+                //db1.SaveChanges();
+                //db.SaveChanges();
+                try
                 {
-                    //return RedirectToAction("ErrorMessage", "IssuedBooks");
-                    ViewBag.error = "You Already Issued 3 books";
-                }
-                else
-                {
-                    return RedirectToAction("ErrorMessage", "IssuedBooks");
-                }
-<<<<<<< HEAD
-
-                db1.SaveChanges();
-                db.SaveChanges();
-=======
-
-                {
-
-
                     db1.SaveChanges();
                     db.SaveChanges();
 
-
-
-
-
-
                 }
                 
->>>>>>> 4bffcdba9545b6a9521d7ea474037a928fcd2de8
 
-            }
+            
             catch (Exception ex)
             {
                 //Console.WriteLine(ex.Message);
