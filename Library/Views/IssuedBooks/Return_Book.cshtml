@@ -66,17 +66,20 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Return Book" class="btn btn-default" />
+<div class="form-actions no-color">
+    <input type="submit" value="Return Book" class="btn btn-default" /> |
 
-            @Html.ActionLink("Back to List", "Return")
-       
-            @if (ViewBag.error != null)
-            {
-                <span class="badge badge-danger">@ViewBag.error</span>
-            }
 
-        </div>
-
+    @Html.ActionLink("Back to List", "Return")
+</div>
+    <br />
+<div>
+    @if (ViewBag.error != null)
+    {
+        <span class="badge badge-danger">@ViewBag.error</span>
     }
+
+</div>
+
+}
 </div>

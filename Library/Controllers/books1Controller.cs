@@ -172,48 +172,10 @@ namespace Library.Controllers
             db.SaveChanges();
 
             db1.IssuedBooks.Add(IssueDetails);
-<<<<<<< HEAD
-                db1.SaveChanges();
-=======
-
-<<<<<<< HEAD
-
-
-            /*if (IssueDetails.ReturnON.AddDays(1)== DateTime.Now)
-            {
-
-            }*/
 
                 db1.SaveChanges();
-                //db.SaveChanges();
-
-
-            return RedirectToAction("Index", "IssuedBooks");
-=======
-            DateTime st = DateTime.Now;
-            
-            TimeSpan t1 = (IssueDetails.ReturnON - st);
-            double Days = t1.TotalDays;
-
-            if (Days < 0)
-            {
-
-                Double Fine = -(Days * 10);
-            }
-
-
-            db1.SaveChanges();
->>>>>>> 1fdfe9b2052f9442d109482bf09a746463069f51
-                db.SaveChanges();
-
-            return RedirectToAction("Index", "IssuedBooks");
-
-
-
-
->>>>>>> 758fa70e07e16b494366c2f65e320f1462f15548
-
-        }
+             return RedirectToAction("Index", "IssuedBooks");
+}
 
 
 

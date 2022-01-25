@@ -4,7 +4,9 @@
 }
 
 <div>
-   
+    @if (ViewBag.error != null)
+    {
         <span class="badge badge-danger">@ViewBag.error</span>
-  
-</div> 
+    }
+
+</div>

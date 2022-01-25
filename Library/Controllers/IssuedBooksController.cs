@@ -192,9 +192,9 @@ namespace Library.Controllers
             db1.SaveChanges();
             db.SaveChanges();
 
-            DateTime t2 = DateTime.Now.AddDays(16);
+           // DateTime t2 = DateTime.Now.AddDays(16);
 
-            TimeSpan t1 = (issuedBook.ReturnON - t2);
+            TimeSpan t1 = (issuedBook.ReturnON - issuedBook.IssuedON);
             double Days = t1.TotalDays;
 
             if (Days < 0)
@@ -202,14 +202,18 @@ namespace Library.Controllers
 
                 Double Fine = -(Days * 10);
                 ViewBag.error = "Due date is crossed " + Fine + " is imposed";
-               
+                return View();
+
+
+
 
             }
-        
-            
+
+            else
+            {
 
                 return RedirectToAction("Return");
-            
+            }
         }
 
         public ActionResult ErrorMessage()
