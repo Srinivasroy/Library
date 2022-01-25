@@ -9,13 +9,7 @@
 
 
 
-<div>
-    @if (ViewBag.error != null)
-    {
-        <span class="badge badge-danger">@ViewBag.error</span>
-    }
-</div>
-<br />
+
 
 
 <table class="table">
@@ -64,12 +58,10 @@
             </td>
             <td>
 
-               @* @Html.ActionLink("Return", "Return", new { id = item.SNO }) |*@
-                @Html.ActionLink("Details", "Details", new { id = item.SNO }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SNO })
+                @Html.ActionLink("Return", "Return_Book", new { id = item.SNO })
             </td>
         </tr>
     }
 
 </table>
-            @Html.ActionLink("Back To List", "Index1","books1")
+@Html.ActionLink("Back To List", "Index1", "books1")

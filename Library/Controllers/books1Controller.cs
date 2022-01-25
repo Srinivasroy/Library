@@ -160,7 +160,7 @@ namespace Library.Controllers
             book book = db.books.Find(id);
             IssuedBook IssueDetails = new IssuedBook();
             Login L = new Login();
-               IssueDetails.SNO = book.SNO;
+            IssueDetails.SNO = book.SNO;
             IssueDetails.Book_Name = book.Book_Name;
             IssueDetails.Author_Name = book.Author_Name;
             IssueDetails.category = book.category;
@@ -173,6 +173,7 @@ namespace Library.Controllers
 
             db1.IssuedBooks.Add(IssueDetails);
 
+<<<<<<< HEAD
 
 
             /*if (IssueDetails.ReturnON.AddDays(1)== DateTime.Now)
@@ -185,8 +186,29 @@ namespace Library.Controllers
 
 
             return RedirectToAction("Index", "IssuedBooks");
+=======
+            DateTime st = DateTime.Now;
+            
+            TimeSpan t1 = (IssueDetails.ReturnON - st);
+            double Days = t1.TotalDays;
 
-            // return View(book);
+            if (Days < 0)
+            {
+
+                Double Fine = -(Days * 10);
+            }
+
+
+            db1.SaveChanges();
+                db.SaveChanges();
+
+            return RedirectToAction("Index", "IssuedBooks");
+
+
+
+
+>>>>>>> 758fa70e07e16b494366c2f65e320f1462f15548
+
         }
 
 

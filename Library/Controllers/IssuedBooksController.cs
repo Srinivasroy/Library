@@ -152,18 +152,16 @@ namespace Library.Controllers
         public ActionResult Return()
         {
 
+            
+
             return View(db.IssuedBooks.ToList());
+
+            
+
+
         }
 
-        //[HttpPost, ActionName("Return")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult ReturnConfirmed(int id)
-        //{
-        //    IssuedBook issuedBook = db.IssuedBooks.Find(id);
-        //    db.IssuedBooks.Remove(issuedBook);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+
 
 
         public ActionResult Return_Book(int? id)
