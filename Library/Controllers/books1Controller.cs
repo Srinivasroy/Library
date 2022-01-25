@@ -169,79 +169,21 @@ namespace Library.Controllers
             IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
 
             book.Quantity = (book.Quantity - 1);
+            db.SaveChanges();
 
-           
             db1.IssuedBooks.Add(IssueDetails);
 
-<<<<<<< HEAD
-            
-
-            
-                //db1.SaveChanges();
-
-                /* if (IssueDetails.UserEmail.Equals(3))
-                 {
-                     //return RedirectToAction("ErrorMessage", "IssuedBooks");
-                     ViewBag.error = "You Already Issued 3 books";
-                 }
-                 else
-                 {
-                     return RedirectToAction("ErrorMessage", "IssuedBooks");
-                 }*/
-
-                //db1.SaveChanges();
-                //db.SaveChanges();
-                try
-                {
-                    db1.SaveChanges();
-                    db.SaveChanges();
-
-                }
-                
-=======
-           
-
-            
-                //db1.SaveChanges();
-                //db.SaveChanges();
-
-            //if (IssueDetails.UserEmail.Equals(3))
-            //{
-            //    //return RedirectToAction("ErrorMessage", "IssuedBooks");
-            //    ViewBag.error = "You Already Issued 3 books";
-            //}
-            //else
-            //{
-            //    return RedirectToAction("ErrorMessage", "IssuedBooks");
-            //}
 
 
-
-
-
-            try
+            /*if (IssueDetails.ReturnON.AddDays(1)== DateTime.Now)
             {
 
+            }*/
 
-                    db1.SaveChanges();
-                    db.SaveChanges();
-
-
-
+                db1.SaveChanges();
+                //db.SaveChanges();
 
 
-
-                
-                
-
->>>>>>> 2e10b5935335d704f8afe92d6f3433bc4fb50b05
-
-            
-            catch (Exception ex)
-            {
-                //Console.WriteLine(ex.Message);
-                ViewBag.error = "Book is out of Stock";
-            }
             return RedirectToAction("Index", "IssuedBooks");
 
             // return View(book);
