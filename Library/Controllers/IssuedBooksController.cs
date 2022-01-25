@@ -185,8 +185,13 @@ namespace Library.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Return_Book(int id)
         {
+            LoginEntities db1 = new LoginEntities();
+           
             IssuedBook issuedBook = db.IssuedBooks.Find(id);
             db.IssuedBooks.Remove(issuedBook);
+            book book = db1.books.Find(id);
+            book.Quantity = (book.Quantity + 1);
+            db1.SaveChanges();
             db.SaveChanges();
             return RedirectToAction("Return");
         }
