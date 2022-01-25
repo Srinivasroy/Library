@@ -8,6 +8,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Library.Models;
+using System.Security.Cryptography;
 
 
 
@@ -81,13 +82,16 @@ namespace Library.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.books.Add(book);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                    db.books.Add(book);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+              
             }
 
             return View(book);
         }
+
+        
 
         // GET: books1/Edit/5
         public ActionResult Edit(int? id)

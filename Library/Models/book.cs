@@ -20,14 +20,18 @@ namespace Library.Models
         public int SNO { get; set; }
 
         [Display(Name = "Book Name")]
+        [Required(ErrorMessage ="Book Name Required")]
         public string Book_Name { get; set; }
 
         [Display(Name = "Author Name")]
+        [Required(ErrorMessage = "Author Name Required")]
         public string Author_Name { get; set; }
 
         [Display(Name = "Category")]
+        [Required(ErrorMessage = "Category Required")]
         public string category { get; set; }
 
+        [Required(ErrorMessage = " Quantity  Required")]
         public Nullable<int> Quantity { get; set; }
     }
 }

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 
 namespace Library.Models
@@ -13,6 +16,8 @@ namespace Library.Models
 
 
         public Entity() : base("Login") { }
+
+        [Required(ErrorMessage = "Email Required")]
         public DbSet<Login> Login { get; set; }
 
         public int Epic { get; set; }

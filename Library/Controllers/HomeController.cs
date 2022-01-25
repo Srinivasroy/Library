@@ -100,9 +100,8 @@ namespace Library.Controllers
         {
             if (ModelState.IsValid)
             {
-
-
-                var f_password = GetMD5(Password);
+               
+                    var f_password = GetMD5(Password);
                 var data =db.Login.Where(s => s.Email.Equals(Email) && s.Password.Equals(f_password)).ToList();
                 if (data.Count() == 1)
                 {
