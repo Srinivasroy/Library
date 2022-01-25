@@ -1,28 +1,8 @@
 ﻿
 @{
     // ViewBag.Title = "User Page";
-    Layout = "~/Views/Shared/Layout.cshtml";
+    Layout = "~/Views/Shared/UsLayout.cshtml";
 }
 
-<h2>User Page</h2>
+<h2 >User Page</h2>
 
-
-<div class="navbar  navbar-fixed-top navbar-light" style="background-color:lightgrey">
-    <div class="container">
-        <div class="navbar-header">
-
-            @Html.ActionLink("Library Management System", "Welcome1", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        </div>
-        <div class="navbar-collapse collapse" style="float:right;">
-            <ul class="nav navbar-nav">
-                <li>  @Html.ActionLink("View Books", "Index1", "books1")</li>
-                <li>  @Html.ActionLink("Return Books", "Return", "IssuedBooks")</li>
-                <li>  @Html.ActionLink("About", "About", "Home")</li>
-                <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>
-
-                <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
-
-            </ul>
-        </div>
-    </div>
-</div>
