@@ -8,42 +8,53 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr.js"></script>
     @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+
+    <style>
+        body {
+            background-image: url("https://as2.ftcdn.net/v2/jpg/00/93/33/79/1000_F_93337931_1ksLriczmSuhDUwEGRurzOOvr3nJSSLK.jpg");
+            background-size: cover;
+            height:200%;
+            background-repeat: no-repeat;
+        }
+        
+    </style>
 </head>
 <body>
-  
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+
+    <div class="navbar navbar-fixed-top navbar-light" style="background-color:lightgrey">
         <div class="container">
             <div class="navbar-header">
-                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>*@
-                @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                @Html.ActionLink("Online Library Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse" style="float:right;">
                 <ul class="nav navbar-nav">
                     <li> @Html.ActionLink("Login", "Login", "Home")</li>
                     <li>  @Html.ActionLink("Register", "Register", "Home")</li>
-                    @*<li>  @Html.ActionLink("AdminLogin", "AdminLogin", "Home")</li>*@
+
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <div >
 
 
-            <hr />
-            <footer style="position:absolute; bottom:0px; height:70px; left:550px; right:100px; overflow:auto; ">
-                <p> Created by Srinivas & Shwetha </p>
-            </footer>
+        <div class="container body-content">
+            @RenderBody()
+            <div>
+
+           
+                <hr />
+                <footer style="position:absolute; bottom:0px; height:70px; left:550px; right:100px; overflow:auto; ">
+                    <p> Created by Srinivas & Shwetha </p>
+                </footer>
+            </div>
         </div>
-    </div>
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
-    <script src="~/Scripts/bootstrap.min.js"></script>
+
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>

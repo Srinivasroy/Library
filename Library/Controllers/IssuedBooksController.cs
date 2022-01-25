@@ -191,7 +191,37 @@ namespace Library.Controllers
             book.Quantity = (book.Quantity + 1);
             db1.SaveChanges();
             db.SaveChanges();
-            return RedirectToAction("Return");
+
+            DateTime t2 = DateTime.Now.AddDays(16);
+
+            TimeSpan t1 = (issuedBook.ReturnON - t2);
+            double Days = t1.TotalDays;
+
+            if (Days < 0)
+            {
+
+                Double Fine = -(Days * 10);
+                ViewBag.error = "Due date is crossed " + Fine + " is imposed";
+               
+
+            }
+        
+            
+
+                return RedirectToAction("Return");
+            
+        }
+
+        public ActionResult ErrorMessage()
+        {
+
+
+
+            return View();
+
+
+
+
         }
 
 

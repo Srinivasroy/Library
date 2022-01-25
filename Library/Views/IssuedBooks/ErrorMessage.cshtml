@@ -1,24 +1,10 @@
-﻿@model IEnumerable<Library.Models.IssuedBook>
-
-@{
-    ViewBag.Title = "Message";
+﻿@{
+    Page.Title = "ErrorMessage";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-        <p> You Have already issued 2 books</p>
-    </div>
-</body>
-</html>
-<a href="~/Views/IssuedBooks/ErrorMessage.cshtml">~/Views/IssuedBooks/ErrorMessage.cshtml</a>
-
-
-
+<div>
+   
+        <span class="badge badge-danger">@ViewBag.error</span>
+  
+</div> 

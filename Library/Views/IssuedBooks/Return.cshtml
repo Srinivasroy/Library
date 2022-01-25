@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Library.Models.IssuedBook>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Return";
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
@@ -60,4 +60,12 @@
     }
 
 </table>
-                 @Html.ActionLink("Back To List", "Index1", "books1")
+<div>
+    @if (ViewBag.error != null)
+    {
+        <span class="badge badge-danger">@ViewBag.error</span>
+    }
+
+</div>
+
+@Html.ActionLink("Back To List", "Index1", "books1")

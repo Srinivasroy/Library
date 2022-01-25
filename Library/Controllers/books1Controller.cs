@@ -172,20 +172,7 @@ namespace Library.Controllers
 
            
             db1.IssuedBooks.Add(IssueDetails);
-
-            DateTime st = DateTime.Now;
-            
-            TimeSpan t1 = (IssueDetails.ReturnON - st);
-            double Days = t1.TotalDays;
-
-            if (Days < 0)
-            {
-
-                Double Fine = -(Days * 10);
-            }
-
-
-            db1.SaveChanges();
+                db1.SaveChanges();
                 db.SaveChanges();
 
             return RedirectToAction("Index", "IssuedBooks");
