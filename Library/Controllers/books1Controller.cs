@@ -160,7 +160,7 @@ namespace Library.Controllers
             book book = db.books.Find(id);
             IssuedBook IssueDetails = new IssuedBook();
             Login L = new Login();
-               IssueDetails.SNO = book.SNO;
+            IssueDetails.SNO = book.SNO;
             IssueDetails.Book_Name = book.Book_Name;
             IssueDetails.Author_Name = book.Author_Name;
             IssueDetails.category = book.category;
@@ -173,78 +173,27 @@ namespace Library.Controllers
            
             db1.IssuedBooks.Add(IssueDetails);
 
-<<<<<<< HEAD
+            DateTime st = DateTime.Now;
             
+            TimeSpan t1 = (IssueDetails.ReturnON - st);
+            double Days = t1.TotalDays;
 
-            
-                //db1.SaveChanges();
-
-                /* if (IssueDetails.UserEmail.Equals(3))
-                 {
-                     //return RedirectToAction("ErrorMessage", "IssuedBooks");
-                     ViewBag.error = "You Already Issued 3 books";
-                 }
-                 else
-                 {
-                     return RedirectToAction("ErrorMessage", "IssuedBooks");
-                 }*/
-
-                //db1.SaveChanges();
-                //db.SaveChanges();
-                try
-                {
-                    db1.SaveChanges();
-                    db.SaveChanges();
-
-                }
-                
-=======
-           
-
-            
-                //db1.SaveChanges();
-                //db.SaveChanges();
-
-            //if (IssueDetails.UserEmail.Equals(3))
-            //{
-            //    //return RedirectToAction("ErrorMessage", "IssuedBooks");
-            //    ViewBag.error = "You Already Issued 3 books";
-            //}
-            //else
-            //{
-            //    return RedirectToAction("ErrorMessage", "IssuedBooks");
-            //}
-
-
-
-
-
-            try
+            if (Days < 0)
             {
 
-
-                    db1.SaveChanges();
-                    db.SaveChanges();
-
-
-
-
-
-
-                
-                
-
->>>>>>> 2e10b5935335d704f8afe92d6f3433bc4fb50b05
-
-            
-            catch (Exception ex)
-            {
-                //Console.WriteLine(ex.Message);
-                ViewBag.error = "Book is out of Stock";
+                Double Fine = -(Days * 10);
             }
+
+
+            db1.SaveChanges();
+                db.SaveChanges();
+
             return RedirectToAction("Index", "IssuedBooks");
 
-            // return View(book);
+
+
+
+
         }
 
 
