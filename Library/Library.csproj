@@ -244,6 +244,9 @@
     <Content Include="Views\IssuedBooks\AdminIndex.cshtml" />
     <Content Include="Views\IssuedBooks\AdminDetails.cshtml" />
     <Content Include="Views\IssuedBooks\ErrorMessage.cshtml" />
+    <Content Include="Views\Shared\RegLayout.cshtml" />
+    <Content Include="Views\Shared\AdLayout.cshtml" />
+    <Content Include="Views\Shared\UsLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

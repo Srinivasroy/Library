@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Login</h2>
+<h2 style="color:whitesmoke">Login</h2>
 
 <br />
     <div class="row justify-content-md-center">
@@ -13,11 +13,11 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="color:whitesmoke">
 
 
 
-                        <div class="form-group">
+                        <div class="form-group" >
                             @Html.LabelFor(m => m.Email)
                             @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" })
                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
@@ -25,7 +25,7 @@
 
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             @Html.LabelFor(m => m.Password)
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
@@ -36,9 +36,10 @@
                                 <span class="badge badge-danger">@ViewBag.error</span>
                             }
                         </div> <br />
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-primary" value="Login" />
-                        </div>
+                               <div class="form-group">
+                                   <input type="submit" name="submit" class="btn btn-primary" value="Login" />
+                                  
+                               </div>
 
 
                     </div>

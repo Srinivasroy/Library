@@ -1,62 +1,14 @@
 ﻿
 @{
     ViewBag.Title = "Admin Page";
-    Layout = "~/Views/Shared/Layout.cshtml";
+    Layout = "~/Views/Shared/AdLayout.cshtml";
 }
 
-<h2>Admin Page</h2>
+<h2 style="color:darkslategray">Admin Page</h2>
 
 
 
 
 
-<div class="navbar navbar-fixed-top navbar-light" style="background-color:lightgrey">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            @Html.ActionLink("Library Management System", "Welcome", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        </div>
-        <div class="navbar-collapse collapse"style="float:right;">
-            <ul class="nav navbar-nav">
-                <li> @Html.ActionLink("Books List", "Index", "books1")</li>
-                <li>  @Html.ActionLink("Enter New Book", "Create", "books1")</li>
-                <li>  @Html.ActionLink("Books Record", "AdminIndex", "IssuedBooks")</li>
-                <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
-
-            </ul>
-        </div>
-    </div>
-</div>
 
 
-
-<div class="row justify-content-md-start">
-    <div class="col-md-4">
-        <div class="card">
-
-            <div class="card-body">
-                @if (Session["FullName"] != null)
-                {
-                    @*<p>Name: @Session["FullName"].ToString()</p>
-                        <p>Email: @Session["Email"].ToString()</p>*@
-
-                    @*@Html.ActionLink("Books Menu", "Index", "books1") <br />
-                    @Html.ActionLink("Enter new Book", "Create", "books1") <br />*@
-
-                    @*@Html.ActionLink("Delete a Book", "Delete", "books1") <br /> <br />*@
-
-                }
-            </div>
-            @*<div>
-                <p style="text-align:right">
-                    <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
-                </p>
-            </div>*@
-        </div>
-
-    </div>
-</div>
