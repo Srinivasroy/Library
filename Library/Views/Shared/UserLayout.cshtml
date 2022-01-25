@@ -11,11 +11,11 @@
 </head>
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightgrey">
+    <div class="navbar  navbar-fixed-top navbar-light" style="background-color:lightgrey">
         <div class="container">
             <div class="navbar-header">
                
-                @Html.ActionLink("Online Library Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Online Library Management System", "Welcome1", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse" style="float:right;">
                 <ul class="nav navbar-nav">
@@ -35,9 +35,7 @@
         <div>
             @RenderBody()
          
-            <footer style="position:inherit; bottom:0px; height:60px; left:550px; right:100px; overflow:auto; ">
-                <p> Created by Srinivas & Shwetha </p>
-            </footer>
+            
         </div>
     </div>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
