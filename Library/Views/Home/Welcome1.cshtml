@@ -1,35 +1,28 @@
 ﻿
 @{
     // ViewBag.Title = "User Page";
-    Layout = "~/Views/Shared/UserLayout.cshtml";
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 <h2>User Page</h2>
 
 
-<div class="row justify-content-md-start">
-    <div class="col-md-4">
-        <div class="card">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
 
-            <div class="card-body">
-                @if (Session["FullName"] != null)
-                {
-                    @*<p>Name: @Session["FullName"].ToString()</p>
-                <p>Email: @Session["Email"].ToString()</p>*@
-                   
-                    @*@Html.ActionLink("Books Menu", "Index", "books1") <br />
-                @Html.ActionLink("Enter new Book", "Create", "books1") <br />*@
-
-                    @*@Html.ActionLink("Delete a Book", "Delete", "books1") <br /> <br />*@
-
-                }
-            </div>
-            @* <div>
-        <p style="text-align:right">
-            <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
-            </p>
-        </div> *@
+            @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
+        <div class="navbar-collapse collapse" style="float:right;">
+            <ul class="nav navbar-nav">
+                <li>  @Html.ActionLink("View Books", "Index1", "books1")</li>
+                <li>  @Html.ActionLink("Return Books", "Return", "IssuedBooks")</li>
+                <li>  @Html.ActionLink("About", "About", "Home")</li>
+                <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>
 
+                <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
+
+            </ul>
+        </div>
     </div>
 </div>
