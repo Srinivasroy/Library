@@ -11,15 +11,31 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+
     public partial class IssuedBook
     {
         public int SNO { get; set; }
+
+        [Display(Name = "Book Name")]
         public string Book_Name { get; set; }
+
+
+        [Display(Name = "Author Name")]
         public string Author_Name { get; set; }
+
+        [Display(Name = "Category")]
         public string category { get; set; }
+
+        [Display(Name = "User Email")]
         public string UserEmail { get; set; }
+
+        [Display(Name = "Issued On")]
         public System.DateTime IssuedON { get; set; }
+
+        [Display(Name = "Returned On")]
         public System.DateTime ReturnON { get; set; }
     }
 }

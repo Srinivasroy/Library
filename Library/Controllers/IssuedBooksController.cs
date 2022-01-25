@@ -107,7 +107,8 @@ namespace Library.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(issuedBook).State = EntityState.Modified;
+                //db.Entry(issuedBook).State = EntityState.Modified;
+                db.Entry(issuedBook).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

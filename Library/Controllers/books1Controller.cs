@@ -10,6 +10,8 @@ using System.Web.Mvc;
 using Library.Models;
 
 
+
+
 namespace Library.Controllers
 {
     public class books1Controller : Controller
@@ -111,7 +113,8 @@ namespace Library.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
+                //db.Entry(book).State = EntityState.Modified;
+                db.Entry(book).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
