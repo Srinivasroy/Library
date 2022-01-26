@@ -52,7 +52,6 @@ namespace Library.Controllers
         }
 
 
-
         public ActionResult Register()
         {
             return View();
@@ -96,13 +95,13 @@ namespace Library.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(string Email,string Password)
+        public ActionResult Login(UserLogin userLogin)
         {
             if (ModelState.IsValid)
             {
                
-                    var f_password = GetMD5(Password);
-                var data =db.Login.Where(s => s.Email.Equals(Email) && s.Password.Equals(f_password)).ToList();
+                    var f_password = GetMD5(userLogin.Password);
+                var data =db.Login.Where(s => s.Email.Equals(userLogin.Email) && s.Password.Equals(f_password)).ToList();
                 if (data.Count() == 1)
                 {
 
