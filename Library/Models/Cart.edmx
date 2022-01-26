@@ -4,24 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LoginModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LoginModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="IssuedBooks">
           <Key>
             <PropertyRef Name="SNO" />
           </Key>
           <Property Name="SNO" Type="int" Nullable="false" />
-          <Property Name="Book_Name" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Author_Name" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="category" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="UserEmail" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Book_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Author_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IssuedON" Type="datetime" Nullable="false" />
           <Property Name="ReturnON" Type="datetime" Nullable="false" />
+          <Property Name="Fine" Type="int" />
         </EntityType>
         <EntityContainer Name="LoginModel1StoreContainer">
           <EntitySet Name="IssuedBooks" EntityType="Self.IssuedBooks" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LoginModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -30,12 +30,13 @@
             <PropertyRef Name="SNO" />
           </Key>
           <Property Name="SNO" Type="Int32" Nullable="false" />
-          <Property Name="Book_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Author_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserEmail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Book_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Author_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IssuedON" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ReturnON" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fine" Type="Int32" />
         </EntityType>
         <EntityContainer Name="LoginEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IssuedBooks" EntityType="Self.IssuedBook" />
@@ -49,6 +50,7 @@
           <EntitySetMapping Name="IssuedBooks">
             <EntityTypeMapping TypeName="LoginModel1.IssuedBook">
               <MappingFragment StoreEntitySet="IssuedBooks">
+                <ScalarProperty Name="Fine" ColumnName="Fine" />
                 <ScalarProperty Name="SNO" ColumnName="SNO" />
                 <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
                 <ScalarProperty Name="Author_Name" ColumnName="Author_Name" />

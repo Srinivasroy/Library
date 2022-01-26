@@ -151,18 +151,10 @@ namespace Library.Controllers
         }
 
         public ActionResult Return()
-        {
-
-            
-
+        { 
             return View(db.IssuedBooks.ToList());
 
-            
-
-
         }
-
-
 
 
         public ActionResult Return_Book(int? id)
@@ -176,7 +168,33 @@ namespace Library.Controllers
             {
                 return HttpNotFound();
             }
+
+           // DateTime t2 = DateTime.Now.AddDays(16);
+            TimeSpan t1 = (issuedBook.ReturnON -issuedBook.IssuedON );
+            double Days = t1.TotalDays;
+
+            if (Days < 0)
+            {
+
+                Double Fine = -(Days * 10);
+
+                int a = Convert.ToInt32(Fine);
+               issuedBook.Fine = a;
+                 db.SaveChanges();
+              //  ViewBag.error = "Due date is crossed " + Fine + " is imposed";
+                //return View();
+
+
+            }
+            else
+            {
+                issuedBook.Fine = 0;
+                db.SaveChanges();
+                
+            }
             return View(issuedBook);
+
+
         }
 
       
@@ -191,42 +209,18 @@ namespace Library.Controllers
             book book = db1.books.Find(id);
             book.Quantity = (book.Quantity + 1);
             db1.SaveChanges();
+            issuedBook.Fine = 0;
             db.SaveChanges();
 
-           // DateTime t2 = DateTime.Now.AddDays(16);
-
-            TimeSpan t1 = (issuedBook.ReturnON - issuedBook.IssuedON);
-            double Days = t1.TotalDays;
-
-            if (Days < 0)
-            {
-
-                Double Fine = -(Days * 10);
-                ViewBag.error = "Due date is crossed " + Fine + " is imposed";
-                return View();
-
-
-
-
-            }
-
-            else
-            {
+            // DateTime t2 = DateTime.Now.AddDays(16);
 
                 return RedirectToAction("Return");
-            }
+            
         }
 
         public ActionResult ErrorMessage()
         {
-
-
-
             return View();
-
-
-
-
         }
 
 

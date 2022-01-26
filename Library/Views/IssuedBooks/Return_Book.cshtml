@@ -59,6 +59,13 @@
         <dd>
             @Html.DisplayFor(model => model.ReturnON)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fine)
+        </dd>
 
     </dl>
 
@@ -67,10 +74,13 @@
         @Html.AntiForgeryToken()
 
 <div class="form-actions no-color">
-    <input type="submit" value="Return Book" class="btn btn-default" /> |
+    <input type="submit" style="background-color:indianred; color:white" value="Return Book" class="btn btn-default" /> |
 
 
-    @Html.ActionLink("Back to List", "Return")
+    @* @Html.ActionLink("Back to List", "Return")*@
+    <input type="button" style="background-color:lightblue; color:black" value="Back To List" onclick="location.href='@Url.Action("Return")'" />
+
+
 </div>
     <br />
 <div>
