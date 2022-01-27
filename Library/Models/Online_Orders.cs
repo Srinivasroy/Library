@@ -12,13 +12,15 @@ namespace Library.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Login
+    public partial class Online_Orders
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public int ID { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Area { get; set; }
+        public string City { get; set; }
+        public Nullable<int> Postal_Code { get; set; }
+        public string Phone_Number { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
-        public int Epic { get; set; }
     }
 }

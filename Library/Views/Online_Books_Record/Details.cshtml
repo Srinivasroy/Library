@@ -1,0 +1,58 @@
+﻿@model Library.Models.Online_Books_Record
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Online_Books_Record</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author_Name_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author_Name_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Issued_ON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Issued_ON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Return_ON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Return_ON)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SNO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

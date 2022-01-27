@@ -7,142 +7,113 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Library.Models;
+using EntityState = System.Data.Entity.EntityState;
 
 namespace Library.Controllers
 {
-    public class Online_OrderController : Controller
+    public class Online_Books_RecordController : Controller
     {
-        private LoginEntities5 db = new LoginEntities5();
+        private LoginEntities8 db = new LoginEntities8();
 
-        // GET: Online_Order
-
-
-
-       
+        // GET: Online_Books_Record
         public ActionResult Index()
         {
-            
-
-
-            return View();
-
+            return View(db.Online_Books_Records.ToList());
         }
 
-
-
-
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(Online_Order orders)
-        {
-
-
-            db.Online_Orders.Add(orders);
-            db.SaveChanges();
-
-           
-            return View();
-
-        }
-        // public ActionResult Online_Cart()
-        //{
-        //    return View(db.Online_Books_Records.ToList());
-        //}
-
-
-        // GET: Online_Order/Details/5
+        // GET: Online_Books_Record/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Online_Order online_Order = db.Online_Orders.Find(id);
-            if (online_Order == null)
+            Online_Books_Record online_Books_Record = db.Online_Books_Records.Find(id);
+            if (online_Books_Record == null)
             {
                 return HttpNotFound();
             }
-            return View(online_Order);
+            return View(online_Books_Record);
         }
 
-        // GET: Online_Order/Create
+        // GET: Online_Books_Record/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Online_Order/Create
+        // POST: Online_Books_Record/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,First_Name,Last_Name,Area,City,Postal_Code,Phone_Number,Email")] Online_Order online_Order)
+        public ActionResult Create([Bind(Include = "SNO,Book_Name,Author_Name_,User_Email,Issued_ON,Return_ON")] Online_Books_Record online_Books_Record)
         {
             if (ModelState.IsValid)
             {
-                db.Online_Orders.Add(online_Order);
+                db.Online_Books_Records.Add(online_Books_Record);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(online_Order);
+            return View(online_Books_Record);
         }
 
-        // GET: Online_Order/Edit/5
+        // GET: Online_Books_Record/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Online_Order online_Order = db.Online_Orders.Find(id);
-            if (online_Order == null)
+            Online_Books_Record online_Books_Record = db.Online_Books_Records.Find(id);
+            if (online_Books_Record == null)
             {
                 return HttpNotFound();
             }
-            return View(online_Order);
+            return View(online_Books_Record);
         }
 
-        // POST: Online_Order/Edit/5
+        // POST: Online_Books_Record/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,First_Name,Last_Name,Area,City,Postal_Code,Phone_Number,Email")] Online_Order online_Order)
+        public ActionResult Edit([Bind(Include = "SNO,Book_Name,Author_Name_,User_Email,Issued_ON,Return_ON")] Online_Books_Record online_Books_Record)
         {
             if (ModelState.IsValid)
             {
-               // db.Entry(online_Order).State = EntityState.Modified;
-               // db.Entry(issuedBook).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(online_Books_Record).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(online_Order);
+            return View(online_Books_Record);
         }
 
-        // GET: Online_Order/Delete/5
+        // GET: Online_Books_Record/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Online_Order online_Order = db.Online_Orders.Find(id);
-            if (online_Order == null)
+            Online_Books_Record online_Books_Record = db.Online_Books_Records.Find(id);
+            if (online_Books_Record == null)
             {
                 return HttpNotFound();
             }
-            return View(online_Order);
+            return View(online_Books_Record);
         }
 
-        // POST: Online_Order/Delete/5
+        // POST: Online_Books_Record/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Online_Order online_Order = db.Online_Orders.Find(id);
-            db.Online_Orders.Remove(online_Order);
+            book book = new book();
+            Online_Books_Record online_Books_Record = db.Online_Books_Records.Find(id);
+            db.Online_Books_Records.Remove(online_Books_Record);
+           book.Quantity = (book.Quantity - 1);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

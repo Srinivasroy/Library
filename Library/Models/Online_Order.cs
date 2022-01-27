@@ -19,15 +19,20 @@ namespace Library.Models
     {
         public int ID { get; set; }
         [Display(Name  = "First Name")]
+        [Required(ErrorMessage = "First Name Required")]
         public string First_Name { get; set; }
-        [Display(Name = "Last Name")]
-        public string Last_Name { get; set; }
 
-        public string Area { get; set; }
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name Required")]
+        public string Last_Name { get; set; }
+        [Required(ErrorMessage = "Area Required")]
+         public string Area { get; set; }
+        [Required(ErrorMessage = "City Required")]
         public string City { get; set; }
+        [Required(ErrorMessage = "Postal Code Required")]
         [Display(Name = "Postal Code")]
         public Nullable<int> Postal_Code { get; set; }
-
+        [Required(ErrorMessage = "Phone Number Required")]
         [Display(Name = "Phone Number")]
         public Nullable<int> Phone_Number { get; set; }
         public string Email { get; set; }

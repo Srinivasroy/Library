@@ -1,0 +1,66 @@
+﻿@model Library.Models.Online_Order
+@{
+   
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2> Online Cart</h2>
+
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Book_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IssuedON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnON)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnON)
+            </td>
+            
+        </tr>
+    }
+
+</table>
+@*@Html.ActionLink("Back To List", "Index1", "books1")*@
+<input type="button" style="background-color:lightblue; color:black" value="Back To List" onclick="location.href='@Url.Action("Index1", "books1")'" />
+
+

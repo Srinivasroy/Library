@@ -128,6 +128,16 @@
       <DependentUpon>Cart.edmx</DependentUpon>
       <LastGenOutput>Cart.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Online Books Record.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Online Books Record.edmx</DependentUpon>
+      <LastGenOutput>Online Books Record.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Online Books Record.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Online Books Record.edmx</DependentUpon>
+      <LastGenOutput>Online Books Record.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\OnlineOrder.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OnlineOrder.edmx</DependentUpon>
@@ -153,6 +163,7 @@
     <Compile Include="Controllers\books1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IssuedBooksController.cs" />
+    <Compile Include="Controllers\Online_Books_RecordController.cs" />
     <Compile Include="Controllers\Online_OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -195,6 +206,21 @@
       <DependentUpon>Cart.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Online Books Record.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Online Books Record.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online Books Record.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Online Books Record.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online Books Record.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Online Books Record.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\OnlineOrder.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +235,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OnlineOrder.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Online_Books_Record.cs">
+      <DependentUpon>Online Books Record.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Online_Order.cs">
       <DependentUpon>OnlineOrder.tt</DependentUpon>
@@ -242,6 +271,13 @@
     </EntityDeploy>
     <Content Include="Models\OnlineOrder.edmx.diagram">
       <DependentUpon>OnlineOrder.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Online Books Record.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Online Books Record.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Online Books Record.edmx.diagram">
+      <DependentUpon>Online Books Record.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
@@ -287,8 +323,14 @@
     <Content Include="Views\Online_Order\Create.cshtml" />
     <Content Include="Views\Online_Order\Delete.cshtml" />
     <Content Include="Views\Online_Order\Details.cshtml" />
-    <Content Include="Views\Online_Order\Edit.cshtml" />
+    <Content Include="Views\Online_Order\Online_Cart.cshtml" />
     <Content Include="Views\Online_Order\Index.cshtml" />
+    <Content Include="Views\books1\Online_Books.cshtml" />
+    <Content Include="Views\Online_Books_Record\Create.cshtml" />
+    <Content Include="Views\Online_Books_Record\Delete.cshtml" />
+    <Content Include="Views\Online_Books_Record\Details.cshtml" />
+    <Content Include="Views\Online_Books_Record\Edit.cshtml" />
+    <Content Include="Views\Online_Books_Record\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

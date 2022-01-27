@@ -12,13 +12,13 @@ namespace Library.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Login
+    public partial class Online_Books_Record
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public int Epic { get; set; }
+        public int SNO { get; set; }
+        public string Book_Name { get; set; }
+        public string Author_Name_ { get; set; }
+        public string User_Email { get; set; }
+        public Nullable<System.DateTime> Issued_ON { get; set; }
+        public Nullable<System.DateTime> Return_ON { get; set; }
     }
 }

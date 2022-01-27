@@ -33,6 +33,11 @@ namespace Library.Controllers
 
             return View(db.books.ToList());
         }
+        public ActionResult Online_Books()
+        {
+
+            return View(db.books.ToList());
+        }
 
 
 
@@ -182,8 +187,30 @@ namespace Library.Controllers
 
                 db1.SaveChanges();
              return RedirectToAction("Index", "IssuedBooks");
-}
+        }
 
+
+
+        public ActionResult Online_Cart(int? id)
+        {
+            book book = db.books.Find(id);
+            
+
+        Online_Books_Record o = new Online_Books_Record();
+             LoginEntities8 db2 = new LoginEntities8();
+                  o.SNO = book.SNO;
+              o.Book_Name=book.Book_Name;
+              o.Author_Name_ = book.Author_Name;
+             o.User_Email = Session["email"].ToString();
+             o.Issued_ON = DateTime.Now;
+         
+
+            book.Quantity = (book.Quantity - 1);
+                  db2.Online_Books_Records.Add(o);
+                     db2.SaveChanges();
+                
+            return RedirectToAction("Index", "Online_Books_Record");
+        }
 
 
     }
