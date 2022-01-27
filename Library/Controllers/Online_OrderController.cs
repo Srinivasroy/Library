@@ -36,8 +36,7 @@ namespace Library.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Online_Order orders)
         {
-
-
+            
             db.Online_Orders.Add(orders);
             db.SaveChanges();
 
@@ -45,10 +44,22 @@ namespace Library.Controllers
             return View();
 
         }
+
+
+
         // public ActionResult Online_Cart()
         //{
         //    return View(db.Online_Books_Records.ToList());
         //}
+
+
+        
+
+
+
+
+
+
 
 
         // GET: Online_Order/Details/5

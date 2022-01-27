@@ -15,7 +15,7 @@ namespace Library.Models
     using System.ComponentModel.DataAnnotations.Schema;
 
 
-    public partial class Online_Order
+    public  class Online_Order
     {
         public int ID { get; set; }
         [Display(Name  = "First Name")]
