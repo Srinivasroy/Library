@@ -37,10 +37,9 @@ namespace Library.Controllers
         public ActionResult Index(Online_Order orders)
         {
             
-<<<<<<< HEAD
-=======
+          
 
->>>>>>> 4653b6674a4ffdded639ed0a71ac9e7dba360819
+
             db.Online_Orders.Add(orders);
             db.SaveChanges();
 

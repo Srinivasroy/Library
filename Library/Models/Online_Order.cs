@@ -31,10 +31,10 @@ namespace Library.Models
         public string City { get; set; }
         [Required(ErrorMessage = "Postal Code Required")]
         [Display(Name = "Postal Code")]
-        public Nullable<int> Postal_Code { get; set; }
+        public string Postal_Code { get; set; }
         [Required(ErrorMessage = "Phone Number Required")]
         [Display(Name = "Phone Number")]
-        public Nullable<int> Phone_Number { get; set; }
+        public string Phone_Number { get; set; }
         public string Email { get; set; }
     }
 }
