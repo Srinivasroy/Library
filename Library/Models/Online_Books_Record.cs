@@ -11,14 +11,32 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+
     public partial class Online_Books_Record
     {
         public int SNO { get; set; }
+
+        [Display(Name = "Book Name")]
+        [Required(ErrorMessage = "Book Name Required")]
         public string Book_Name { get; set; }
+
+        [Display(Name = "Author Name")]
+        [Required(ErrorMessage = "Author Name Required")]
         public string Author_Name_ { get; set; }
+
+        [Display(Name = "User Email")]
+        [Required(ErrorMessage = "User Email Required")]
         public string User_Email { get; set; }
+
+        [Display(Name = "Issued ON")]
+        //[Required(ErrorMessage = "Issued ON Required")]
         public Nullable<System.DateTime> Issued_ON { get; set; }
+
+        [Display(Name = "Return ON")]
+        
         public Nullable<System.DateTime> Return_ON { get; set; }
     }
 }
