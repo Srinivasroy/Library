@@ -11,15 +11,23 @@ namespace Library.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class IssuedBook
     {
         public int SNO { get; set; }
+
+        [Display(Name = "Book Name")]
         public string Book_Name { get; set; }
+        [Display(Name = "Author Name")]
         public string Author_Name { get; set; }
+        [Display(Name = "Category")]
         public string category { get; set; }
+        [Display(Name = "User Email")]
         public string UserEmail { get; set; }
+        [Display(Name = "Issued ON")]
         public System.DateTime IssuedON { get; set; }
+        [Display(Name = "Returned ON")]
         public System.DateTime ReturnON { get; set; }
         public Nullable<int> Fine { get; set; }
     }
