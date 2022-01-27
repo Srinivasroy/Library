@@ -12,16 +12,15 @@ namespace Library.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-<<<<<<< HEAD
+
     using System.ComponentModel.DataAnnotations.Schema;
 
-=======
->>>>>>> 7adccf11e683a6d5035b63565bd26b61bb8dd44a
+
 
     public partial class Online_Books_Record
     {
         public int SNO { get; set; }
-<<<<<<< HEAD
+
 
         [Display(Name = "Book Name")]
         [Required(ErrorMessage = "Book Name Required")]
@@ -41,8 +40,8 @@ namespace Library.Models
 
         [Display(Name = "Return ON")]
         
-=======
-        [Display(Name = "Book Name")]
+
+        /*[Display(Name = "Book Name")]
         public string Book_Name { get; set; }
         [Display(Name = "Author Name")]
         public string Author_Name_ { get; set; }
@@ -50,8 +49,8 @@ namespace Library.Models
         public string User_Email { get; set; }
         [Display(Name = "Issued ON")]
         public Nullable<System.DateTime> Issued_ON { get; set; }
-        [Display(Name = "Return ON")]
->>>>>>> 7adccf11e683a6d5035b63565bd26b61bb8dd44a
+        [Display(Name = "Return ON")]*/
+
         public Nullable<System.DateTime> Return_ON { get; set; }
     }
 }

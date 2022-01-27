@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/RegLayout.cshtml";
 }
 
-<h2 style="color:whitesmoke">Register</h2>
+<h2 style="color:red">Register</h2>
 
 
 <div class="row justify-content-md-center">
@@ -19,7 +19,7 @@
 
             <div class="card">
 
-                <div class="card-body" style="color:whitesmoke">
+                <div class="card-body" style="color:black">
                     <div class="form-group">
                         @Html.LabelFor(m => m.FirstName)
                         @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name" })
@@ -54,7 +54,7 @@
                                <input type="submit" name="submit" class="btn btn-primary" value="Register" />
 
                                @*<input type="button" style="background-color:darkgreen; color:white" value="Back To Login" onclick="location.href='@Url.Action("Login", "Home")'" />*@
-                               <input type="button" style="background-color:crimsonred; name="submit" class="btn btn-primary" value="Back To Login" onclick="location.href='@Url.Action("Login", "Home")'" />
+                               <input type="button"  name="submit" class="btn btn-primary" value="Back To Login" onclick="location.href='@Url.Action("Login", "Home")'" />
 
                            </div>
                     

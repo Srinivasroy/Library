@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2 style="color:black">Login</h2>
+<h2 style="color:red">Login</h2>
 
 <br />
     <div class="row justify-content-md-center">
@@ -17,10 +17,11 @@
 
 
 
-                        <div class="form-group" >
+                        <div class="form-group">
+                            <a href="~/Views/Home/Login.cshtml"></a>
                             @Html.LabelFor(m => m.Email)
                             @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge1"})
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge1" })
 
 
 

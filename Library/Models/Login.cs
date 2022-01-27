@@ -34,22 +34,14 @@ namespace Library.Models
         [Required(ErrorMessage = "Password Required")]
         public string Password { get; set; }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 7adccf11e683a6d5035b63565bd26b61bb8dd44a
         [Display(Name = "Confirm Password")]
         [Required(ErrorMessage = "Confirm Password Required")]
 
         public String ConfirmPassword { get; set; }
 
-
-<<<<<<< HEAD
         //public string ConfirmPassword { get; set; }
-=======
 
-
->>>>>>> 7adccf11e683a6d5035b63565bd26b61bb8dd44a
         public int Epic { get; set; }
     }
 }
