@@ -36,7 +36,7 @@ namespace Library.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Online_Order orders)
         {
-
+            
 
             db.Online_Orders.Add(orders);
             db.SaveChanges();
