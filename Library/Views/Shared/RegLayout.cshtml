@@ -19,13 +19,17 @@
             background-repeat: no-repeat;
             background-size: 100% 130%;
         }
+        .badge1 {
+            color: red !important;
+            background-color: none !important;
+        }
     </style>
 </head>
 <body>
 
 
     <div class="navbar navbar-fixed-top navbar-light" style="background-color:lightblue">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
 
                 @Html.ActionLink("Library Management System", "Login", "Home", new { area = "" }, new { @class = "navbar-brand" })
@@ -48,9 +52,7 @@
 
 
 
-            <footer style="position:absolute; bottom:0px; height:50px; left:550px; right:100px; overflow:auto; color:white; ">
-                <p> Created by Srinivas & Shwetha </p>
-            </footer>
+            
         </div>
     </div>
 
