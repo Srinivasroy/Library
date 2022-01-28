@@ -38,37 +38,37 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Book_Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Author_Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.category)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UserEmail)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IssuedON)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ReturnON)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Fine)
-    </td>
-    
-    <td>
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuedON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fine)
+            </td>
+
+            <td>
+            </td>
+        </tr>
     }
 
 </table>
-@*@Html.ActionLink("Back To List", "Index", "books1")*@
-<input type="button" style="background-color:lightblue; color:black" value="Back To List" onclick="location.href='@Url.Action("Index", "books1")'" />
+@*@Html.ActionLink("Back To List", "Index", "books1")
+    <input type="button" style="background-color:lightblue; color:black" value="Back To List" onclick="location.href='@Url.Action("Index", "books1")'" /> *@
 
 
 

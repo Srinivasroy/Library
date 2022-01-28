@@ -60,7 +60,8 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Create" class="btn btn-default" /> |
+            <input type="button" class="btn btn-primary" style="background-color:lightblue; color:black" value="Back To List" onclick="location.href='@Url.Action("Index", "books1")'" />
         </div>
     </div>
 </div>
@@ -71,7 +72,8 @@
 <div>
     @* @Html.ActionLink("Back To List", "Index")
         <input type="button" value="Back To List" onclick="location.href='@Url.Action("Index1", "books1")'" />*@
-    <input type="button" style="background-color:lightblue; color:black" value="Back To List" onclick="location.href='@Url.Action("Index1", "books1")'" />
+    
+    
 
 
 

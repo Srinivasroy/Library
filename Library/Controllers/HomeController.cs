@@ -71,7 +71,7 @@ namespace Library.Controllers
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Login.Add(user);
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Login");
                 }
                 else
                 {

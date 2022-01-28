@@ -8,8 +8,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Online_Books_Record</h4>
-    <hr />
+    
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Book_Name)
@@ -43,22 +42,17 @@
             @Html.DisplayFor(model => model.Issued_ON)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Return_ON)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Return_ON)
-        </dd>
+        
 
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+   
+    <input type="button" class="btn btn-primary" style="background-color:lightblue;  color:black" value="Back to List" onclick="location.href='@Url.Action("Back to List", "Index")'" />
+</div>
     }
 </div>
