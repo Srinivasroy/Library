@@ -68,6 +68,7 @@ namespace Library.Controllers
                 if (check == null)
                 {
                     user.Password = GetMD5(user.Password);
+                    user.ConfirmPassword = GetMD5(user.ConfirmPassword);
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Login.Add(user);
                     db.SaveChanges();
