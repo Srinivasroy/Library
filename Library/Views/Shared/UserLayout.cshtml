@@ -8,6 +8,15 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr.js"></script>
     @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+
+    <style>
+
+        .badge1 {
+            color: red !important;
+            background-color: none !important;
+        }
+    </style>
+   
 </head>
 <body>
 
@@ -22,7 +31,7 @@
                     <li>  @Html.ActionLink("View Books", "Index1", "books1")</li>
 
                     <li>  @Html.ActionLink("Return Books", "Return", "IssuedBooks")</li>
-                    @*<li> @Html.ActionLink("Home Delivery", "Online_Books", "books1")</li>*@
+                    <li> @Html.ActionLink("Home Delivery", "Online_Books", "books1")</li>
                     <li>  @Html.ActionLink("About", "About", "Home")</li>
                     <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>
 

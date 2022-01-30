@@ -28,6 +28,7 @@ namespace Library.Controllers
         {
 
             db.Online_Book_Orders.Add(orders);
+            db.Configuration.ValidateOnSaveEnabled = false;
             db.SaveChanges();
 
 

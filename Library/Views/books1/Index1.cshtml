@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
-<h2 style="color:red">Index</h2>
+<h2 style="color:red">Books List</h2>
 
 <table class="table">
     <tr>
@@ -36,7 +36,7 @@
             </td>
             <td>
                 @Html.ActionLink("Details", "UserDetails", new { id = item.SNO }) |
-                @Html.ActionLink("Add To Cart", "Cart", new { id = item.SNO }) 
+                @Html.ActionLink("Borrow Book", "Cart", new { id = item.SNO }) 
 
             </td>
         </tr>

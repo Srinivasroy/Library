@@ -21,19 +21,16 @@ namespace Library.Controllers
             return View(db.Online_Books_Records.ToList());
         }
 
-        // GET: Online_Books_Record/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Online_book_records()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Online_Books_Record online_Books_Record = db.Online_Books_Records.Find(id);
-            if (online_Books_Record == null)
-            {
-                return HttpNotFound();
-            }
-            return View(online_Books_Record);
+            return View(db.Online_Books_Records.ToList());
+        }
+
+        // GET: Online_Books_Record/Details/5
+        public ActionResult Details()
+        {
+            
+            return View();
         }
 
         // GET: Online_Books_Record/Create

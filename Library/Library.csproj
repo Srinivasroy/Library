@@ -324,7 +324,7 @@
     <Content Include="Views\Online_Books_Record\Create.cshtml" />
     <Content Include="Views\Online_Books_Record\Delete.cshtml" />
     <Content Include="Views\Online_Books_Record\Details.cshtml" />
-    <Content Include="Views\Online_Books_Record\Edit.cshtml" />
+    <Content Include="Views\Online_Books_Record\Online_book_records.cshtml" />
     <Content Include="Views\Online_Books_Record\Index.cshtml" />
     <Content Include="Views\Online_Book_Orders\Create.cshtml" />
     <Content Include="Views\Online_Book_Orders\Delete.cshtml" />
