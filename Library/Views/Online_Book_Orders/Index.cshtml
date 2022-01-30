@@ -1,15 +1,86 @@
-﻿@model Library.Models.Online_Order
+﻿@*@model IEnumerable<Library.Models.Online_Book_Orders>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postal_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postal_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    </table>*@
+
+
+
+@model Library.Models.Online_Book_Orders
 
 @{
-    
+
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
 
 <div class="row justify-content-md-center">
-    <div >
+    <div>
 
-        @using (Html.BeginForm("Index", "Online_Order", FormMethod.Post))
+        @using (Html.BeginForm("Index", "Online_Book_Orders", FormMethod.Post))
         {
 
 
@@ -18,7 +89,7 @@
 
             <div class="card">
 
-                <div class="card-body"style="color:black;" >
+                <div class="card-body" style="color:black;">
                     <div class="form-group">
                         @Html.LabelFor(m => m.First_Name)
                         @Html.TextBoxFor(m => m.First_Name, "", new { @class = "form-control", @placeholder = "First Name" })
@@ -60,7 +131,7 @@
 
                     <br />
                     <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-primary" value="confirm order" />
+                        <input type="submit" name="submit" class="btn btn-primary" value="Confirm Order" />
 
 
 
@@ -74,3 +145,6 @@
         }
     </div>
 </div>
+
+
+

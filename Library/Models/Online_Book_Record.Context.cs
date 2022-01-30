@@ -13,10 +13,10 @@ namespace Library.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LoginEntities5 : DbContext
+    public partial class LoginEntities9 : DbContext
     {
-        public LoginEntities5()
-            : base("name=LoginEntities5")
+        public LoginEntities9()
+            : base("name=LoginEntities9")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Library.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Online_Order> Online_Orders { get; set; }
+        public virtual DbSet<Online_Book_Orders> Online_Book_Orders { get; set; }
     }
 }

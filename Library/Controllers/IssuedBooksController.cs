@@ -21,11 +21,17 @@ namespace Library.Controllers
        
         public ActionResult Index()
         {
-       
-
+            /*IssuedBook issuedBook = db.IssuedBooks.Find(id);
+           
+             string s = Session["Email"].ToString();
+             if (s == issuedBook.UserEmail)
+             {
+                return View();
+             }*/
 
             return View(db.IssuedBooks.ToList());
-       }
+           
+        }
 
         public ActionResult AdminIndex()
         {
@@ -170,7 +176,7 @@ namespace Library.Controllers
             }
 
            // DateTime t2 = DateTime.Now.AddDays(16);
-            TimeSpan t1 = (issuedBook.ReturnON -issuedBook.IssuedON );
+            TimeSpan t1 = (issuedBook.ReturnON - issuedBook.IssuedON );
             double Days = t1.TotalDays;
 
             if (Days < 0)
@@ -192,6 +198,8 @@ namespace Library.Controllers
                 db.SaveChanges();
                 
             }
+
+
             return View(issuedBook);
 
 

@@ -171,7 +171,7 @@ namespace Library.Controllers
            
             book book = db.books.Find(id);
             IssuedBook IssueDetails = new IssuedBook();
-            Login L = new Login();
+           // Login L = new Login();
             IssueDetails.SNO = book.SNO;
             IssueDetails.Book_Name = book.Book_Name;
             IssueDetails.Author_Name = book.Author_Name;

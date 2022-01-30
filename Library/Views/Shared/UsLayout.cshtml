@@ -22,10 +22,12 @@
             color: red !important;
             background-color: none !important;
         }
+       
+
+
     </style>
 </head>
 <body>
-
 
     <div class="navbar  navbar-fixed-top navbar-light" style="background-color:lightblue">
         <div class="container-fluid">
@@ -36,15 +38,18 @@
             <div class="navbar-collapse collapse" style="float:right;">
                 <ul class="nav navbar-nav">
                     <li>  @Html.ActionLink("View Books", "Index1", "books1")</li>
+
                     <li>  @Html.ActionLink("Return Books", "Return", "IssuedBooks")</li>
-                    @*<li> @Html.ActionLink("Home Delivery", "Online_Books", "books1")</li>*@
+                    <li> @Html.ActionLink("Home Delivery", "Online_Books", "books1")</li>
                     <li>  @Html.ActionLink("About", "About", "Home")</li>
                     <li>  @Html.ActionLink("Contact Us", "ContactUs", "Home")</li>
 
                     <li>  @Html.ActionLink("Logout", "Logout", "Home")</li>
-
-                </ul>
-            </div>
+                    
+                    @*<li>@Session["Email"].ToString()</li>*@
+                    
+            </ul>
+        </div>
         </div>
     </div>
 

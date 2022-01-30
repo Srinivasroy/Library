@@ -15,26 +15,35 @@ namespace Library.Models
     using System.ComponentModel.DataAnnotations.Schema;
 
 
-    public  class Online_Order
+    public partial class Online_Book_Orders
     {
-        public int ID { get; set; }
-        [Display(Name  = "First Name")]
-        [Required(ErrorMessage = "First Name Required")]
+        public int Id { get; set; }
+        [Display(Name ="First Name")]
+        [Required(ErrorMessage ="First Name is Required")]
         public string First_Name { get; set; }
 
         [Display(Name = "Last Name")]
-        [Required(ErrorMessage = "Last Name Required")]
+        [Required(ErrorMessage = "Last Name is Required")]
         public string Last_Name { get; set; }
-        [Required(ErrorMessage = "Area Required")]
-         public string Area { get; set; }
-        [Required(ErrorMessage = "City Required")]
+
+        [Display(Name = "Area")]
+        [Required(ErrorMessage = "Area is Required")]
+        public string Area { get; set; }
+
+        [Display(Name = "City")]
+        [Required(ErrorMessage = "City is Required")]
         public string City { get; set; }
-        [Required(ErrorMessage = "Postal Code Required")]
+
         [Display(Name = "Postal Code")]
+        [Required(ErrorMessage = "Postal Code is Required")]
         public string Postal_Code { get; set; }
-        [Required(ErrorMessage = "Phone Number Required")]
+
         [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number is Required")]
         public string Phone_Number { get; set; }
+
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Email is Required")]
         public string Email { get; set; }
     }
 }
