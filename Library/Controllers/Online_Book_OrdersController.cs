@@ -32,8 +32,14 @@ namespace Library.Controllers
             db.SaveChanges();
 
 
-            return View();
+            return RedirectToAction("EndPage");
 
+        }
+
+        public ActionResult EndPage()
+        {
+
+            return View();
         }
 
 

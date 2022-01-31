@@ -332,6 +332,7 @@
     <Content Include="Views\Online_Book_Orders\Edit.cshtml" />
     <Content Include="Views\Online_Book_Orders\Index.cshtml" />
     <Content Include="Views\Online_Book_Orders\Online_Cart.cshtml" />
+    <Content Include="Views\Online_Book_Orders\EndPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
