@@ -26,13 +26,17 @@ namespace Library.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Online_Book_Orders orders)
         {
+            if (ModelState.IsValid)
+            {
 
-            db.Online_Book_Orders.Add(orders);
-            db.Configuration.ValidateOnSaveEnabled = false;
-            db.SaveChanges();
+                db.Online_Book_Orders.Add(orders);
+                db.Configuration.ValidateOnSaveEnabled = false;
+                db.SaveChanges();
 
 
-            return RedirectToAction("EndPage");
+                return RedirectToAction("EndPage");
+            }
+            return View();
 
         }
 
