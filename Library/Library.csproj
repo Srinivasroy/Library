@@ -51,7 +51,13 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -128,6 +134,16 @@
       <DependentUpon>Cart.edmx</DependentUpon>
       <LastGenOutput>Cart.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ExceptionLogging.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExceptionLogging.edmx</DependentUpon>
+      <LastGenOutput>ExceptionLogging.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ExceptionLogging.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExceptionLogging.edmx</DependentUpon>
+      <LastGenOutput>ExceptionLogging1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Online Books Record.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Online Books Record.edmx</DependentUpon>
@@ -161,6 +177,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\books1Controller.cs" />
+    <Compile Include="Controllers\ExceptionLogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IssuedBooksController.cs" />
     <Compile Include="Controllers\Online_Books_RecordController.cs" />
@@ -202,6 +219,24 @@
       <DependentUpon>Cart.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\ExceptionLogging.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionLogging.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExceptionLogging.cs">
+      <DependentUpon>ExceptionLogging.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExceptionLogging.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionLogging.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExceptionLogging1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionLogging.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IssuedBook.cs">
       <DependentUpon>Cart.tt</DependentUpon>
     </Compile>
@@ -279,6 +314,13 @@
     <Content Include="Models\Online_Book_Record.edmx.diagram">
       <DependentUpon>Online_Book_Record.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\ExceptionLogging.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ExceptionLogging.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ExceptionLogging.edmx.diagram">
+      <DependentUpon>ExceptionLogging.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Shared\Viewstart.cshtml" />
@@ -333,6 +375,7 @@
     <Content Include="Views\Online_Book_Orders\Index.cshtml" />
     <Content Include="Views\Online_Book_Orders\Online_Cart.cshtml" />
     <Content Include="Views\Online_Book_Orders\EndPage.cshtml" />
+    <Content Include="Views\ExceptionLog\ExceptionMsg.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -343,6 +386,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

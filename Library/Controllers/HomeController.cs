@@ -132,7 +132,7 @@ namespace Library.Controllers
         }
 
 
-        //Logout
+       
         public ActionResult Logout()
         {
             Session.Clear();//remove session
@@ -145,14 +145,14 @@ namespace Library.Controllers
             return View();
         }
 
-        //About
+        //About Us
         public ActionResult About()
         {
             return View();
         }
 
 
-        //create a string MD5
+        //Encrypt Password
         public static string GetMD5(string str)
         {
             MD5 md5 = new MD5CryptoServiceProvider();

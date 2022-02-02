@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using Library.Models;
 using System.Security.Cryptography;
+using context = System.Web.HttpContext; 
 
 
 
@@ -19,7 +20,7 @@ namespace Library.Controllers
     {
         private LoginEntities db = new LoginEntities();
 
-        // GET: books1
+      
 
         [HttpGet]
         public ActionResult Index()
@@ -168,25 +169,50 @@ namespace Library.Controllers
         public ActionResult Cart(int? id)
         {
             LoginEntities3 db1 = new LoginEntities3();
-           
-            book book = db.books.Find(id);
-            IssuedBook IssueDetails = new IssuedBook();
-           // Login L = new Login();
-            IssueDetails.SNO = book.SNO;
-            IssueDetails.Book_Name = book.Book_Name;
-            IssueDetails.Author_Name = book.Author_Name;
-            IssueDetails.category = book.category;
-            IssueDetails.UserEmail = Session["email"].ToString();
-            IssueDetails.IssuedON = DateTime.Now;
-            IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
 
-            book.Quantity = (book.Quantity - 1);
-            db.SaveChanges();
+            try
+            {
 
-            db1.IssuedBooks.Add(IssueDetails);
+                book book = db.books.Find(id);
+                IssuedBook IssueDetails = new IssuedBook();
+                // Login L = new Login();
+                IssueDetails.SNO = book.SNO;
+                IssueDetails.Book_Name = book.Book_Name;
+                IssueDetails.Author_Name = book.Author_Name;
+                IssueDetails.category = book.category;
+                IssueDetails.UserEmail = Session["email"].ToString();
+                IssueDetails.IssuedON = DateTime.Now;
+                IssueDetails.ReturnON = IssueDetails.IssuedON.AddDays(15);
+
+                book.Quantity = (book.Quantity - 1);
+                db.SaveChanges();
+
+                db1.IssuedBooks.Add(IssueDetails);
 
                 db1.SaveChanges();
-             return RedirectToAction("Index", "IssuedBooks");
+                
+            }
+
+            catch (Exception ex)
+            {
+               LoginEntities10 exp = new LoginEntities10();
+
+                
+                ExceptionLogController.ExptoDB(ex);
+
+                exp.SaveChanges();
+
+
+
+                ViewBag.error = "Book is already in Cart";
+
+                return RedirectToAction("ExceptionMsg", "ExceptionLog");
+
+
+
+            }
+            return RedirectToAction("Index", "IssuedBooks");
+
         }
 
 
@@ -214,4 +240,6 @@ namespace Library.Controllers
 
 
     }
+
+  
 }
