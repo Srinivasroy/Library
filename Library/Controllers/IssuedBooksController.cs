@@ -226,10 +226,7 @@ namespace Library.Controllers
             
         }
 
-        public ActionResult ErrorMessage()
-        {
-            return View();
-        }
+     
 
 
     }

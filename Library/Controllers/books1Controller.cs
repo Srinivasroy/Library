@@ -204,7 +204,9 @@ namespace Library.Controllers
 
 
 
-                ViewBag.error = "Book is already in Cart";
+              //  ViewBag.error = "Book is already in Cart";
+
+                
 
                 return RedirectToAction("ExceptionMsg", "ExceptionLog");
 
@@ -220,22 +222,43 @@ namespace Library.Controllers
         public ActionResult Online_Cart(int? id)
         {
             book book = db.books.Find(id);
-            
 
-        Online_Books_Record o = new Online_Books_Record();
-             LoginEntities8 db2 = new LoginEntities8();
-                  o.SNO = book.SNO;
-              o.Book_Name=book.Book_Name;
-              o.Author_Name_ = book.Author_Name;
-             o.User_Email = Session["email"].ToString();
-             o.Issued_ON = DateTime.Now;
-         
+            try
+            {
+                Online_Books_Record o = new Online_Books_Record();
+                LoginEntities8 db2 = new LoginEntities8();
+                o.SNO = book.SNO;
+                o.Book_Name = book.Book_Name;
+                o.Author_Name_ = book.Author_Name;
+                o.User_Email = Session["email"].ToString();
+                o.Issued_ON = DateTime.Now;
 
-            book.Quantity = (book.Quantity - 1);
-            db.SaveChanges();
-                  db2.Online_Books_Records.Add(o);
-                     db2.SaveChanges();
-                
+
+                book.Quantity = (book.Quantity - 1);
+                db.SaveChanges();
+                db2.Online_Books_Records.Add(o);
+                db2.SaveChanges();
+
+            }
+            catch(Exception ex)
+            {
+
+                LoginEntities10 exp = new LoginEntities10();
+
+                ExceptionLogController.ExptoDB(ex);
+
+                exp.SaveChanges();
+
+
+
+
+
+
+                return RedirectToAction("ExceptionMsg", "ExceptionLog");
+
+
+            }
+
             return RedirectToAction("Index", "Online_Books_Record");
         }
 
