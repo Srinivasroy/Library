@@ -232,6 +232,7 @@ namespace Library.Controllers
          
 
             book.Quantity = (book.Quantity - 1);
+            db.SaveChanges();
                   db2.Online_Books_Records.Add(o);
                      db2.SaveChanges();
                 

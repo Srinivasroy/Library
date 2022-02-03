@@ -33,11 +33,10 @@ namespace Library.Controllers
                 db.Configuration.ValidateOnSaveEnabled = false;
                 db.SaveChanges();
 
-
                 return RedirectToAction("EndPage");
             }
+     
             return View();
-
         }
 
         public ActionResult EndPage()

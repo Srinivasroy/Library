@@ -12,6 +12,7 @@ namespace Library.Controllers
 
     {
         private LoginEntities10 exp = new LoginEntities10();
+
         private static String exepurl;
         // GET: ExceptionLog
         public ActionResult Index()
@@ -21,6 +22,7 @@ namespace Library.Controllers
 
         public ActionResult ExceptionMsg()
         {
+            
             return View();
         }
 
@@ -28,15 +30,18 @@ namespace Library.Controllers
         public static void ExptoDB(Exception ex)
         {
 
-             
-                 
-                 ExceptionLogging exception = new ExceptionLogging();
+            LoginEntities10 exp = new LoginEntities10();
+
+             ExceptionLogging exception = new ExceptionLogging();
+
                  exepurl = context.Current.Request.Url.ToString();
-                exception.ExceptionMsg_= ex.Message;
-                exception.ExceptionType_=ex.GetType().Name.ToString();
-                exception.ExceptionURL_ = exepurl;
-            exception.ExceptionSource_ = ex.StackTrace.ToString();
-           // exp.SaveChanges();
+                 exception.ExceptionMsg_= ex.Message.ToString();
+                 exception.ExceptionType_=ex.GetType().Name.ToString();
+                 exception.ExceptionURL_ = exepurl;
+                 exception.ExceptionSource_ = ex.StackTrace.ToString();
+                  exception.LogDate = DateTime.Now;
+                  exp.ExceptionLoggings.Add(exception);
+                  exp.SaveChanges();
 
          }
     }

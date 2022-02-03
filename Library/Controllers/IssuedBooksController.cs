@@ -19,12 +19,12 @@ namespace Library.Controllers
 
         // GET: IssuedBooks
        
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            /*IssuedBook issuedBook = db.IssuedBooks.Find(id);
-           
+           /* IssuedBook issuedBook = db.IssuedBooks.Find(id);
+            IssuedBook issued = new IssuedBook();
              string s = Session["Email"].ToString();
-             if (s == issuedBook.UserEmail)
+             if (s == issued.UserEmail)
              {
                 return View();
              }*/
